@@ -41,7 +41,7 @@
   <a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main">Peak Grades</span></div></a>
   <nav class="main-nav" aria-label="Primary">
     <div class="nav-item"><a class="nav-link active" href="tutoring.html">Tutoring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="#gcse">GCSE Subjects</a><a href="#alevel">A-Level Subjects</a><a href="#further">Further Maths</a><div class="dropdown-divider"></div><a href="#how-it-works">How It Works</a><a href="#pricing">Pricing</a><a href="contact.html">Book a Free Call</a></div></div>
-    <div class="nav-item"><a class="nav-link" href="resources.html">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown dropdown-wide"><div class="dropdown-cols"><div><div class="dropdown-label">GCSE</div><a href="resources.html#maths-gcse">Maths</a><a href="resources.html#combined-gcse">Combined Science</a><a href="resources.html#biology-gcse">Biology</a><a href="resources.html#chemistry-gcse">Chemistry</a><a href="resources.html#physics-gcse">Physics</a></div><div><div class="dropdown-label">A-Level</div><a href="resources.html#maths-alevel">Maths</a><a href="resources.html#biology-alevel">Biology</a><a href="resources.html#chemistry-alevel">Chemistry</a><a href="resources.html#physics-alevel">Physics</a></div></div></div></div>
+    <div class="nav-item"><a class="nav-link" href="resources.html">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown dropdown-wide"><div class="dropdown-cols"><div><div class="dropdown-label">GCSE</div><a href="resources.html#maths-gcse">Maths</a><a href="resources.html#english-gcse">English</a><a href="resources.html#combined-gcse">Combined Science</a><a href="resources.html#biology-gcse">Biology</a><a href="resources.html#chemistry-gcse">Chemistry</a><a href="resources.html#physics-gcse">Physics</a></div><div><div class="dropdown-label">A-Level</div><a href="resources.html#maths-alevel">Maths</a><a href="resources.html#biology-alevel">Biology</a><a href="resources.html#chemistry-alevel">Chemistry</a><a href="resources.html#physics-alevel">Physics</a></div></div></div></div>
     <a class="nav-link" href="courses.html">Courses</a>
     <a class="nav-link" href="blog.html">Blog</a>
     <a class="nav-link" href="about.html">About</a>
@@ -67,7 +67,7 @@
 <section class="section section-alt" id="gcse">
   <div class="wrap">
     <div class="section-header center reveal"><div class="eyebrow">GCSE Subjects</div><h2>Choose your GCSE subject.</h2><p>All GCSE sessions are tailored to your exam board, specification and target grade — Foundation or Higher.</p></div>
-    <div class="subject-hero-grid">
+    <div class="subject-hero-grid" style="grid-template-columns:repeat(3,1fr)">
       <article class="subject-card reveal">
         <div class="subject-card-head">
           <div class="card-icon" style="margin-bottom:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
@@ -81,6 +81,18 @@
         <a class="btn btn-teal btn-block mt-3" href="contact.html">Book GCSE Maths tutoring</a>
       </article>
       <article class="subject-card reveal r2">
+        <div class="subject-card-head">
+          <div class="card-icon" style="margin-bottom:0;background:#fef3c7;color:#b45309"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <div><h3 style="margin-bottom:.15rem">GCSE English</h3><span class="subject-badge" style="background:#fef3c7;color:#b45309;border-radius:20px">Language &amp; Literature</span></div>
+        </div>
+        <p>Targeted support for both English Language and English Literature — essay technique, language analysis, and set text mastery.</p>
+        <div class="topic-pills">
+          <span class="topic-pill">Reading Fiction</span><span class="topic-pill">Reading Non-Fiction</span><span class="topic-pill">Creative Writing</span><span class="topic-pill">Shakespeare</span><span class="topic-pill">Modern Texts</span><span class="topic-pill">Poetry</span>
+        </div>
+        <div><div style="font-size:12.5px;font-weight:700;color:var(--text-muted);margin-bottom:.4rem">Exam boards covered:</div><div class="exam-boards"><span class="board-tag">AQA</span><span class="board-tag">Edexcel</span><span class="board-tag">OCR</span></div></div>
+        <a class="btn btn-teal btn-block mt-3" href="contact.html">Book GCSE English tutoring</a>
+      </article>
+      <article class="subject-card reveal r3">
         <div class="subject-card-head">
           <div class="card-icon" style="margin-bottom:0;background:#ede9fe;color:#7c3aed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
           <div><h3 style="margin-bottom:.15rem">GCSE Combined Science</h3><span class="subject-badge" style="background:#ede9fe;color:#7c3aed;border-radius:20px">Foundation &amp; Higher</span></div>
@@ -288,7 +300,7 @@
   <div class="wrap" style="max-width:780px">
     <div class="section-header center reveal"><div class="eyebrow">FAQ</div><h2>Common questions about tutoring.</h2></div>
     <div class="faq-list reveal">
-      <details open><summary>Which subjects and levels do you cover?<span class="faq-chevron">▾</span></summary><div class="faq-body">GCSE and A-Level Maths, Biology, Chemistry and Physics (Foundation, Higher, Year 12 &amp; Year 13). Further Maths support is also available. All sessions are tailored to AQA, Edexcel or OCR specifications.</div></details>
+      <details open><summary>Which subjects and levels do you cover?<span class="faq-chevron">▾</span></summary><div class="faq-body">GCSE and A-Level Maths, GCSE English, Biology, Chemistry and Physics (Foundation, Higher, Year 12 &amp; Year 13). Further Maths support is also available. All sessions are tailored to AQA, Edexcel or OCR specifications.</div></details>
       <details><summary>Are lessons online or in person?<span class="faq-chevron">▾</span></summary><div class="faq-body">All lessons are online via Zoom with an interactive whiteboard, so I can tutor students anywhere in the UK. Lessons can be recorded for review if useful.</div></details>
       <details><summary>How long are sessions?<span class="faq-chevron">▾</span></summary><div class="faq-body">Standard sessions are 60 minutes. 90-minute sessions are available for exam booster work — just mention it when you book.</div></details>
       <details><summary>Can I book a trial session first?<span class="faq-chevron">▾</span></summary><div class="faq-body">Absolutely — there's no minimum commitment. Start with a free call, then book a trial session. Many students then move to weekly lessons, but only if it's working.</div></details>
