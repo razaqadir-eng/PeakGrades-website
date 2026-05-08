@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maths Tutoring — Peak Grades</title>
+  <meta name="description" content="Expert one-to-one GCSE and A-Level Maths tutoring. Online lessons tailored to your exam board, target grade, and weak areas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .subject-hero-grid { display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start; }
+    .subject-card { background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;transition:border-color .2s,box-shadow .2s; }
+    .subject-card:hover { border-color:var(--teal-mid);box-shadow:var(--shadow); }
+    .subject-card-head { display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem; }
+    .subject-badge { padding:.45rem .95rem;border-radius:20px;font-size:13px;font-weight:700; }
+    .subject-card h3 { font-size:1.2rem;font-weight:800;margin-bottom:.5rem; }
+    .subject-card > p { color:var(--text-muted);font-size:.9rem;margin-bottom:1.25rem; }
+    .topic-pills { display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.5rem; }
+    .topic-pill { padding:.35rem .75rem;border-radius:20px;background:var(--bg-soft);border:1px solid var(--border);font-size:12.5px; }
+    .exam-boards { display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem; }
+    .board-tag { padding:.3rem .7rem;border-radius:5px;background:var(--teal-light);color:var(--teal-dark);font-size:12px;font-weight:700; }
+    .process-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1.15rem; }
+    .process-step { background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;text-align:center; }
+    .process-num { width:44px;height:44px;border-radius:50%;background:var(--teal);color:#fff;font-size:1.1rem;font-weight:800;display:grid;place-items:center;margin:0 auto 1rem; }
+    .process-step h4 { font-size:.9375rem;font-weight:700;margin-bottom:.4rem; }
+    .process-step p { font-size:.8125rem;color:var(--text-muted); }
+    .why-grid { display:grid;grid-template-columns:1fr 1fr;gap:1.25rem; }
+    .why-card { display:flex;align-items:flex-start;gap:1rem;padding:1.5rem;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg); }
+    .why-icon { width:42px;height:42px;border-radius:10px;background:var(--teal-light);display:grid;place-items:center;color:var(--teal);flex-shrink:0; }
+    .why-icon svg { width:21px;height:21px; }
+    .why-card h4 { font-size:.9375rem;font-weight:700;margin-bottom:.3rem; }
+    .why-card p { font-size:.8125rem;color:var(--text-muted); }
+    @media(max-width:860px){ .subject-hero-grid,.process-grid,.why-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:560px){ .subject-hero-grid,.process-grid,.why-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="top-bar"><div class="wrap top-bar-inner"><div class="top-bar-left"><span>🇬🇧 Online Maths tutoring across the UK</span></div><div class="top-bar-right"><a href="resources.html">Free resources</a><a href="contact.html">Book a free call</a></div></div></div>
+<header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main">Peak Grades</span></div></a>
+  <nav class="main-nav" aria-label="Primary">
+    <div class="nav-item"><a class="nav-link active" href="tutoring.html">Tutoring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="#gcse">GCSE Maths</a><a href="#alevel">A-Level Maths</a><a href="#further">Further Maths</a><div class="dropdown-divider"></div><a href="#how-it-works">How It Works</a><a href="#pricing">Pricing</a><a href="contact.html">Book a Free Call</a></div></div>
+    <div class="nav-item"><a class="nav-link" href="resources.html">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="resources.html">GCSE Resources</a><a href="resources.html#alevel">A-Level Resources</a><a href="resources.html#exam-technique">Exam Technique</a></div></div>
+    <a class="nav-link" href="courses.html">Courses</a>
+    <a class="nav-link" href="blog.html">Blog</a>
+    <a class="nav-link" href="about.html">About</a>
+  </nav>
+  <div class="header-ctas"><a class="btn btn-outline" href="resources.html">Free Resources</a><a class="btn btn-teal" href="contact.html">Book Free Call</a><button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle><span></span><span></span><span></span></button></div>
+</div></header>
+<nav id="mobile-nav" class="mobile-nav"><a class="mobile-nav-link" href="tutoring.html" data-close-nav>Tutoring</a><a class="mobile-nav-link" href="resources.html" data-close-nav>Resources</a><a class="mobile-nav-link" href="courses.html" data-close-nav>Courses</a><a class="mobile-nav-link" href="blog.html" data-close-nav>Blog</a><a class="mobile-nav-link" href="about.html" data-close-nav>About</a><div class="mobile-nav-divider"></div><div class="mobile-nav-ctas"><a class="btn btn-outline btn-block" href="resources.html" data-close-nav>Free Resources</a><a class="btn btn-teal btn-block" href="contact.html" data-close-nav>Book a Free Call</a></div></nav>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Tutoring</span></div>
+    <div class="page-hero-eyebrow">👨‍🏫 One-to-one · Online · UK-wide</div>
+    <h1>Expert Maths Tutoring for <em>GCSE &amp; A-Level.</em></h1>
+    <p>Personalised one-to-one sessions built around your exam board, your weak areas, and your target grade. Online via Zoom — flexible scheduling across the UK.</p>
+    <div class="page-hero-actions"><a class="btn btn-white btn-lg" href="contact.html">Book a free call</a><a class="btn btn-ghost-white btn-lg" href="#how-it-works">How it works</a></div>
+  </div>
+</section>
+
+<div class="stats-bar"><div class="wrap stats-inner"><div class="stat reveal"><strong>95%</strong><span>grade improvement rate</span></div><div class="stat-div"></div><div class="stat reveal r2"><strong>50+</strong><span>students tutored</span></div><div class="stat-div"></div><div class="stat reveal r3"><strong>A*</strong><span>tutor's A-Level result</span></div><div class="stat-div"></div><div class="stat reveal r4"><strong>3</strong><span>exam boards covered</span></div></div></div>
+
+<!-- SUBJECTS -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-header center reveal"><div class="eyebrow">Subjects</div><h2>Find your level.</h2><p>All sessions are tailored to your specific qualification and exam board — no generic content.</p></div>
+    <div class="subject-hero-grid">
+      <article class="subject-card reveal" id="gcse">
+        <div class="subject-card-head">
+          <div class="card-icon" style="margin-bottom:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <div><h3 style="margin-bottom:.15rem">GCSE Maths</h3><span class="subject-badge badge-gcse" style="background:#dbeafe;color:#1d4ed8;border-radius:20px">Foundation &amp; Higher</span></div>
+        </div>
+        <p>Targeted sessions for Year 10 and Year 11 students — closing gaps, improving technique, and building the confidence to perform under exam conditions.</p>
+        <div class="topic-pills">
+          <span class="topic-pill">Algebra &amp; Equations</span><span class="topic-pill">Geometry &amp; Trigonometry</span><span class="topic-pill">Statistics &amp; Probability</span><span class="topic-pill">Number &amp; Ratio</span><span class="topic-pill">Graphs &amp; Functions</span><span class="topic-pill">Circle Theorems</span>
+        </div>
+        <div><div style="font-size:12.5px;font-weight:700;color:var(--text-muted);margin-bottom:.4rem">Exam boards covered:</div><div class="exam-boards"><span class="board-tag">AQA</span><span class="board-tag">Edexcel</span><span class="board-tag">OCR</span></div></div>
+        <a class="btn btn-teal btn-block mt-3" href="contact.html">Book GCSE tutoring</a>
+      </article>
+      <article class="subject-card reveal r2" id="alevel">
+        <div class="subject-card-head">
+          <div class="card-icon purple" style="margin-bottom:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div><h3 style="margin-bottom:.15rem">A-Level Maths</h3><span class="subject-badge" style="background:#ede9fe;color:#6d28d9;border-radius:20px">Year 12 &amp; Year 13</span></div>
+        </div>
+        <p>In-depth support for all A-Level Maths components. Whether you're struggling with Pure, Mechanics or Statistics — we work through it properly.</p>
+        <div class="topic-pills">
+          <span class="topic-pill">Differentiation &amp; Integration</span><span class="topic-pill">Proof</span><span class="topic-pill">Trigonometry</span><span class="topic-pill">Mechanics</span><span class="topic-pill">Statistics</span><span class="topic-pill">Vectors</span>
+        </div>
+        <div><div style="font-size:12.5px;font-weight:700;color:var(--text-muted);margin-bottom:.4rem">Exam boards covered:</div><div class="exam-boards"><span class="board-tag">AQA</span><span class="board-tag">Edexcel</span><span class="board-tag">OCR</span></div></div>
+        <a class="btn btn-teal btn-block mt-3" href="contact.html">Book A-Level tutoring</a>
+      </article>
+    </div>
+    <div class="subject-card reveal mt-3" id="further" style="max-width:560px;margin-inline:auto;text-align:center">
+      <h3>Further Maths</h3>
+      <p class="text-muted" style="max-width:none">Advanced support for Further Maths students — complex numbers, matrices, further mechanics and more. Available as a supplement to regular tuition.</p>
+      <a class="btn btn-outline mt-2" href="contact.html">Enquire about Further Maths</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how-it-works">
+  <div class="wrap">
+    <div class="section-header center reveal"><div class="eyebrow">How It Works</div><h2>Simple from the start.</h2><p>No complicated onboarding. A quick call, a clear plan, and lessons that deliver results.</p></div>
+    <div class="process-grid">
+      <div class="process-step reveal"><div class="process-num">1</div><h4>Book a free 20-min call</h4><p>We discuss your level, exam board, target grade and where you're struggling. Free, no obligation.</p></div>
+      <div class="process-step reveal r2"><div class="process-num">2</div><h4>Get a personalised plan</h4><p>I put together the right support — weekly sessions, a booster package, or a mix — and walk you through what to expect.</p></div>
+      <div class="process-step reveal r3"><div class="process-num">3</div><h4>Start your first lesson</h4><p>Sessions run online via Zoom with an interactive whiteboard. We start with your most urgent gaps first.</p></div>
+      <div class="process-step reveal r4"><div class="process-num">4</div><h4>Track your progress</h4><p>After every session I send a recap: what we covered, homework to complete, and what to focus on next.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PEAK GRADES -->
+<section class="section section-teal">
+  <div class="wrap">
+    <div class="section-header center reveal"><div class="eyebrow">Why Peak Grades</div><h2>What makes us different.</h2></div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Genuinely tailored sessions</h4><p>Every lesson has a specific focus. We don't just work through the textbook — we attack your actual weak areas first.</p></div></div>
+      <div class="why-card reveal r2"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><div><h4>Taught by someone who aced it</h4><p>I have a Grade 9 GCSE and an A* in A-Level Maths. I know the exams inside out — which topics come up most and where marks are commonly lost.</p></div></div>
+      <div class="why-card reveal r3"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div><h4>Clear progress after every session</h4><p>Post-session recap notes, homework and a forward focus. Parents always know what was covered and what's next.</p></div></div>
+      <div class="why-card reveal r4"><div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><div><h4>No minimum commitment</h4><p>Try a single trial session — no package required. Many students stay for regular weekly lessons, but only because it's working.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-header center reveal"><div class="eyebrow">Pricing</div><h2>Transparent rates, no surprises.</h2><p>All sessions are one-to-one and online. Block discounts available — ask on your free call.</p></div>
+    <div class="grid-3">
+      <article class="price-card reveal">
+        <div class="price-label">Foundation Support</div>
+        <div class="price-amount"><sup>£</sup>25<sub>/hr</sub></div>
+        <p class="price-desc">Consistent weekly tutoring for steady, long-term improvement.</p>
+        <ul class="price-features">
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>60-min weekly session</li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Tailored to your exam board</li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Post-session recap notes</li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free revision resources</li>
+        </ul>
+        <a class="btn btn-outline btn-block" href="contact.html">Book a free call</a>
+      </article>
+      <article class="price-card featured reveal r2">
+        <div class="featured-badge">Most Popular</div>
+        <div class="price-label">Full Tutoring</div>
+        <div class="price-amount"><sup>£</sup>35<sub>/hr</sub></div>
+        <p class="price-desc">Structured tutoring with homework, revision planning and parent updates.</p>
+        <ul class="price-features">
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Foundation</li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Homework setting &amp; review</li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Topic-by-topic revision plan</li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Progress reports for parents</li>
+        </ul>
+        <a class="btn btn-teal btn-block" href="contact.html">Book a free call</a>
+      </article>
+      <article class="price-card reveal r3">
+        <div class="price-label">Exam Booster</div>
+        <div class="price-amount"><sup>£</sup>45<sub>/hr</sub></div>
+        <p class="price-desc">Short-term intensive support before mocks or final exams.</p>
+        <ul class="price-features">
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Exam technique focus</li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Timed past paper practice</li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Targeted weak-topic sessions</li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Flexible pre-exam scheduling</li>
+        </ul>
+        <a class="btn btn-outline btn-block" href="contact.html">Book a free call</a>
+      </article>
+    </div>
+    <p class="text-center text-muted mt-2" style="font-size:.875rem">Block session discounts available. Ask about packages on your free call.</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="section-header center reveal"><div class="eyebrow">Reviews</div><h2>What students and parents say.</h2></div>
+    <div class="grid-3">
+      <article class="review-card reveal"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><blockquote>"My daughter went from grade 5 to a 7 in two months. Sessions are structured and she finally understands what she's doing."</blockquote><div class="reviewer"><div class="reviewer-avatar">SP</div><div><span class="reviewer-name">Sarah P.</span><span class="reviewer-meta">Parent · Edexcel GCSE Higher</span></div></div></article>
+      <article class="review-card reveal r2"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><blockquote>"Was struggling with integration before A-Level mocks. It finally made sense — came out of the paper feeling confident for the first time."</blockquote><div class="reviewer"><div class="reviewer-avatar">JL</div><div><span class="reviewer-name">James L.</span><span class="reviewer-meta">A-Level Maths · AQA Year 12</span></div></div></article>
+      <article class="review-card reveal r3"><div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><blockquote>"The exam booster package was worth every penny. Technique and timed papers made a real difference on the day."</blockquote><div class="reviewer"><div class="reviewer-avatar">MT</div><div><span class="reviewer-name">Mark T.</span><span class="reviewer-meta">Parent · OCR GCSE Higher</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="wrap" style="max-width:780px">
+    <div class="section-header center reveal"><div class="eyebrow">FAQ</div><h2>Common questions about tutoring.</h2></div>
+    <div class="faq-list reveal">
+      <details open><summary>Do you cover both GCSE and A-Level?<span class="faq-chevron">▾</span></summary><div class="faq-body">Yes — GCSE Maths (Foundation &amp; Higher) and A-Level Maths (Pure, Mechanics &amp; Statistics). Further Maths support is also available. All sessions are tailored to AQA, Edexcel or OCR.</div></details>
+      <details><summary>Are lessons online or in person?<span class="faq-chevron">▾</span></summary><div class="faq-body">All lessons are online via Zoom with an interactive whiteboard, so I can tutor students anywhere in the UK. Lessons can be recorded for review if useful.</div></details>
+      <details><summary>How long are sessions?<span class="faq-chevron">▾</span></summary><div class="faq-body">Standard sessions are 60 minutes. 90-minute sessions are available for exam booster work — just mention it when you book.</div></details>
+      <details><summary>Can I book a trial session first?<span class="faq-chevron">▾</span></summary><div class="faq-body">Absolutely — there's no minimum commitment. Start with a free call, then book a trial session. Many students then move to weekly lessons, but only if it's working.</div></details>
+      <details><summary>What platform do you use?<span class="faq-chevron">▾</span></summary><div class="faq-body">Sessions run on Zoom with a Bitpaper interactive whiteboard. All you need is a laptop or tablet, a stable internet connection, and a stylus (optional but helpful).</div></details>
+    </div>
+  </div>
+</section>
+
+<div class="newsletter-band"><div class="wrap newsletter-inner"><div class="newsletter-copy reveal"><h2>Free revision tips, straight to your inbox.</h2><p>Worksheets, exam guides and revision strategies delivered weekly.</p></div><div class="reveal r2"><form class="newsletter-form-row" onsubmit="handleNewsletter(event)"><input class="newsletter-input" type="email" placeholder="Enter your email" required autocomplete="email" aria-label="Email"/><button class="btn btn-white" type="submit">Subscribe</button></form><p class="newsletter-note">Free. No spam. Unsubscribe any time.</p></div></div></div>
+</main>
+
+<footer class="site-footer"><div class="footer-main"><div class="wrap"><div class="footer-grid"><div class="footer-brand-col"><a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main" style="color:#fff">Peak Grades</span></div></a><p>Expert GCSE and A-Level Maths tutoring for UK students.</p><div class="footer-social"><a class="social-btn" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div></div><div class="footer-col"><h4>Resources</h4><nav class="footer-links"><a href="resources.html">GCSE Resources</a><a href="resources.html#alevel">A-Level Resources</a><a href="resources.html#exam-technique">Exam Technique</a></nav></div><div class="footer-col"><h4>Tutoring</h4><nav class="footer-links"><a href="tutoring.html#gcse">GCSE Maths</a><a href="tutoring.html#alevel">A-Level Maths</a><a href="tutoring.html#pricing">Pricing</a><a href="courses.html">Courses</a></nav></div><div class="footer-col"><h4>About</h4><nav class="footer-links"><a href="about.html">About Us</a><a href="blog.html">Blog</a></nav></div><div class="footer-col"><h4>Contact</h4><nav class="footer-links"><a href="contact.html">Book a Free Call</a><a href="mailto:hello@peakgrades.co.uk">hello@peakgrades.co.uk</a></nav></div></div></div></div><div class="footer-bottom"><div class="wrap footer-bottom-inner"><span>&copy; 2025 Peak Grades. All rights reserved.</span><div class="footer-bottom-links"><a href="contact.html#privacy">Privacy Policy</a><a href="contact.html#terms">Terms</a></div></div></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

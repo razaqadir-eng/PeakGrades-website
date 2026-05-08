@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Peak Grades</title>
+  <meta name="description" content="Revision tips, exam advice and Maths guides for GCSE and A-Level students — from the Peak Grades blog." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .blog-filter { display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem; }
+    .filter-btn { padding:8px 18px;border-radius:20px;font-size:13px;font-weight:700;border:1.5px solid var(--border);color:var(--text-muted);background:var(--bg);cursor:pointer;transition:.15s; }
+    .filter-btn.active,.filter-btn:hover { border-color:var(--teal);color:var(--teal);background:var(--teal-light); }
+    .blog-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem; }
+    .blog-card { background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s; }
+    .blog-card:hover { box-shadow:var(--shadow);transform:translateY(-3px); }
+    .blog-card-img { aspect-ratio:16/9;background:var(--bg-soft);display:flex;align-items:center;justify-content:center; }
+    .blog-card-img-inner { width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem; }
+    .blog-card-body { padding:1.4rem;flex:1;display:flex;flex-direction:column; }
+    .blog-meta { display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;flex-wrap:wrap; }
+    .blog-cat { padding:.3rem .75rem;border-radius:20px;font-size:11.5px;font-weight:700; }
+    .blog-date { font-size:12px;color:var(--text-faint); }
+    .blog-card h3 { font-size:1rem;font-weight:700;line-height:1.3;margin-bottom:.5rem; }
+    .blog-card h3 a { color:var(--text);transition:color .15s; }
+    .blog-card h3 a:hover { color:var(--teal); }
+    .blog-card p { font-size:.8125rem;color:var(--text-muted);flex:1;margin-bottom:1rem; }
+    .blog-card-footer { display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding-top:.9rem;border-top:1px solid var(--border);font-size:.8125rem; }
+    .read-time { color:var(--text-faint); }
+    .read-more { font-weight:700;color:var(--teal);font-size:.8125rem;transition:gap .15s;display:flex;align-items:center;gap:.3rem; }
+    .read-more:hover { gap:.5rem; }
+    .featured-post { display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:3.5rem; }
+    .featured-post-img { background:linear-gradient(135deg,var(--navy),#1a3a4a);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:4rem; }
+    .featured-post-body { padding:2rem 2rem 2rem 0; }
+    .featured-post-body h2 { font-family:var(--font-serif);font-size:clamp(1.2rem,2vw,1.75rem);font-weight:900;margin:.5rem 0 .75rem; }
+    .featured-post-body h2 a { color:var(--text);transition:color .15s; }
+    .featured-post-body h2 a:hover { color:var(--teal); }
+    .featured-post-body p { font-size:.9375rem;color:var(--text-muted);margin-bottom:1.25rem; }
+    @media(max-width:860px){ .blog-grid{grid-template-columns:1fr 1fr;} .featured-post{grid-template-columns:1fr;} .featured-post-body{padding:1.5rem;} }
+    @media(max-width:560px){ .blog-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="top-bar"><div class="wrap top-bar-inner"><div class="top-bar-left"><span>🇬🇧 Online Maths tutoring across the UK</span></div><div class="top-bar-right"><a href="resources.html">Free resources</a><a href="contact.html">Book a free call</a></div></div></div>
+<header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main">Peak Grades</span></div></a>
+  <nav class="main-nav" aria-label="Primary">
+    <div class="nav-item"><a class="nav-link" href="tutoring.html">Tutoring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="tutoring.html#gcse">GCSE Maths</a><a href="tutoring.html#alevel">A-Level Maths</a><a href="tutoring.html#pricing">Pricing</a></div></div>
+    <div class="nav-item"><a class="nav-link" href="resources.html">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="resources.html">GCSE Resources</a><a href="resources.html#alevel">A-Level Resources</a></div></div>
+    <a class="nav-link" href="courses.html">Courses</a>
+    <a class="nav-link active" href="blog.html">Blog</a>
+    <a class="nav-link" href="about.html">About</a>
+  </nav>
+  <div class="header-ctas"><a class="btn btn-outline" href="resources.html">Free Resources</a><a class="btn btn-teal" href="contact.html">Book Free Call</a><button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle><span></span><span></span><span></span></button></div>
+</div></header>
+<nav id="mobile-nav" class="mobile-nav"><a class="mobile-nav-link" href="tutoring.html" data-close-nav>Tutoring</a><a class="mobile-nav-link" href="resources.html" data-close-nav>Resources</a><a class="mobile-nav-link" href="courses.html" data-close-nav>Courses</a><a class="mobile-nav-link active" href="blog.html" data-close-nav>Blog</a><a class="mobile-nav-link" href="about.html" data-close-nav>About</a><div class="mobile-nav-divider"></div><div class="mobile-nav-ctas"><a class="btn btn-outline btn-block" href="resources.html" data-close-nav>Free Resources</a><a class="btn btn-teal btn-block" href="contact.html" data-close-nav>Book a Free Call</a></div></nav>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Blog</span></div>
+    <div class="page-hero-eyebrow">✏️ Tips, guides &amp; revision advice</div>
+    <h1>The Peak Grades <em>Blog.</em></h1>
+    <p>Revision strategies, exam technique, Maths explainers and advice for students and parents — written by someone who's been through it.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+
+    <!-- Featured post -->
+    <article class="featured-post reveal">
+      <div class="featured-post-img">📐</div>
+      <div class="featured-post-body">
+        <div class="blog-meta"><span class="blog-cat" style="background:#dbeafe;color:#1d4ed8">Students</span><span class="blog-date">2 May 2025</span><span class="badge badge-new">Featured</span></div>
+        <h2><a href="#">How to Stop Losing Marks on Questions You Actually Know</a></h2>
+        <p>Most students lose marks not because they don't know the Maths — but because they don't show working correctly, rush the final step, or misread the question. Here's how to fix it.</p>
+        <a class="btn btn-teal" href="#">Read article →</a>
+      </div>
+    </article>
+
+    <!-- Filter tabs -->
+    <div id="students" class="blog-filter" role="group" aria-label="Filter posts">
+      <button class="filter-btn active" data-filter="all">All posts</button>
+      <button class="filter-btn" data-filter="students">For Students</button>
+      <button class="filter-btn" data-filter="parents">For Parents</button>
+      <button class="filter-btn" data-filter="exam-technique">Exam Technique</button>
+      <button class="filter-btn" data-filter="revision">Revision Tips</button>
+    </div>
+
+    <!-- Blog posts grid -->
+    <div class="blog-grid" id="blog-grid">
+
+      <article class="blog-card reveal" data-category="students exam-technique">
+        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#eff6ff;">🔢</div></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-cat" style="background:#dbeafe;color:#1d4ed8">Students</span><span class="blog-date">28 Apr 2025</span></div>
+          <h3><a href="#">The 5-Step Method for Approaching Any Maths Exam Question</a></h3>
+          <p>A simple framework for tackling questions you've never seen before — especially useful for the higher-mark problems at the end of the paper.</p>
+          <div class="blog-card-footer"><span class="read-time">4 min read</span><a class="read-more" href="#">Read more →</a></div>
+        </div>
+      </article>
+
+      <article class="blog-card reveal r2" data-category="parents">
+        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#f0fdf4;">👨‍👩‍👧</div></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-cat" style="background:#dcfce7;color:#15803d">Parents</span><span class="blog-date">21 Apr 2025</span></div>
+          <h3><a href="#">How to Tell If Your Child's Maths Tutor Is Actually Working</a></h3>
+          <p>What to look for beyond "the lessons are going well" — the real signs that tutoring is making a measurable difference.</p>
+          <div class="blog-card-footer"><span class="read-time">5 min read</span><a class="read-more" href="#">Read more →</a></div>
+        </div>
+      </article>
+
+      <article class="blog-card reveal r3" data-category="students revision">
+        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#fef3c7;">📅</div></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-cat" style="background:#dbeafe;color:#1d4ed8">Students</span><span class="blog-date">14 Apr 2025</span></div>
+          <h3><a href="#">How to Build a GCSE Maths Revision Plan That Actually Works</a></h3>
+          <p>Stop revising randomly. Here's how to build a structured plan that covers every topic before the exam without burning out.</p>
+          <div class="blog-card-footer"><span class="read-time">6 min read</span><a class="read-more" href="#">Read more →</a></div>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="exam-technique">
+        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#fff7ed;">⏱️</div></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-cat" style="background:#fff7ed;color:#ea580c">Exam Technique</span><span class="blog-date">7 Apr 2025</span></div>
+          <h3><a href="#">Timing in the GCSE Maths Exam: How to Manage 3 Papers</a></h3>
+          <p>The exact breakdown of how to allocate your time across Paper 1, 2 and 3 — and what to do when you get stuck on a question.</p>
+          <div class="blog-card-footer"><span class="read-time">4 min read</span><a class="read-more" href="#">Read more →</a></div>
+        </div>
+      </article>
+
+      <article class="blog-card reveal r2" data-category="students revision">
+        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#fdf4ff;">📝</div></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-cat" style="background:#dbeafe;color:#1d4ed8">Students</span><span class="blog-date">31 Mar 2025</span></div>
+          <h3><a href="#">Why Active Recall Beats Re-reading Notes Every Time</a></h3>
+          <p>The science-backed revision technique that most Maths students ignore — and how to apply it to every topic from Algebra to Trigonometry.</p>
+          <div class="blog-card-footer"><span class="read-time">5 min read</span><a class="read-more" href="#">Read more →</a></div>
+        </div>
+      </article>
+
+      <article class="blog-card reveal r3" data-category="parents">
+        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#ecfdf5;">💬</div></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-cat" style="background:#dcfce7;color:#15803d">Parents</span><span class="blog-date">24 Mar 2025</span></div>
+          <h3><a href="#">What to Ask at a Tutoring Introductory Call (And What to Look For)</a></h3>
+          <p>The 5 questions every parent should ask before committing to a tutor — and the answers that should reassure you.</p>
+          <div class="blog-card-footer"><span class="read-time">4 min read</span><a class="read-more" href="#">Read more →</a></div>
+        </div>
+      </article>
+
+      <article class="blog-card reveal" data-category="students exam-technique">
+        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#eff6ff;">📊</div></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-cat" style="background:#fff7ed;color:#ea580c">Exam Technique</span><span class="blog-date">17 Mar 2025</span></div>
+          <h3><a href="#">How to Pick Up Method Marks Even When Your Answer Is Wrong</a></h3>
+          <p>Examiners award marks for correct method, even if the final answer is wrong. Here's how to maximise your marks on every question.</p>
+          <div class="blog-card-footer"><span class="read-time">3 min read</span><a class="read-more" href="#">Read more →</a></div>
+        </div>
+      </article>
+
+      <article class="blog-card reveal r2" data-category="students revision">
+        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#fef2f2;">🧠</div></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-cat" style="background:#dbeafe;color:#1d4ed8">Students</span><span class="blog-date">10 Mar 2025</span></div>
+          <h3><a href="#">The 10 Most Common GCSE Maths Mistakes (And How to Avoid Them)</a></h3>
+          <p>From sign errors in algebra to forgetting to simplify, these are the mistakes that cost students grades — and how to stop making them.</p>
+          <div class="blog-card-footer"><span class="read-time">7 min read</span><a class="read-more" href="#">Read more →</a></div>
+        </div>
+      </article>
+
+      <article class="blog-card reveal r3" data-category="parents">
+        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#f0fdf4;">🎯</div></div>
+        <div class="blog-card-body">
+          <div class="blog-meta"><span class="blog-cat" style="background:#dcfce7;color:#15803d">Parents</span><span class="blog-date">3 Mar 2025</span></div>
+          <h3><a href="#">When Should You Start Getting a Maths Tutor? (GCSE Guide for Parents)</a></h3>
+          <p>The honest answer — it's usually earlier than you think. Here's when tutoring makes the biggest difference and when it's too late to fully catch up.</p>
+          <div class="blog-card-footer"><span class="read-time">5 min read</span><a class="read-more" href="#">Read more →</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="text-align:center;margin-top:3rem" class="reveal">
+      <button class="btn btn-outline" style="font-size:.9375rem">Load more posts</button>
+    </div>
+  </div>
+</section>
+
+<div class="newsletter-band"><div class="wrap newsletter-inner"><div class="newsletter-copy reveal"><h2>Get new posts straight to your inbox.</h2><p>Revision tips, exam strategies and Maths guides — delivered weekly. Free.</p></div><div class="reveal r2"><form class="newsletter-form-row" onsubmit="handleNewsletter(event)"><input class="newsletter-input" type="email" placeholder="Enter your email" required autocomplete="email" aria-label="Email"/><button class="btn btn-white" type="submit">Subscribe</button></form><p class="newsletter-note">No spam. Unsubscribe any time.</p></div></div></div>
+</main>
+
+<footer class="site-footer"><div class="footer-main"><div class="wrap"><div class="footer-grid"><div class="footer-brand-col"><a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main" style="color:#fff">Peak Grades</span></div></a><p>Expert GCSE and A-Level Maths tutoring for UK students.</p></div><div class="footer-col"><h4>Resources</h4><nav class="footer-links"><a href="resources.html">GCSE Resources</a><a href="resources.html#alevel">A-Level Resources</a></nav></div><div class="footer-col"><h4>Tutoring</h4><nav class="footer-links"><a href="tutoring.html#gcse">GCSE Maths</a><a href="tutoring.html#alevel">A-Level Maths</a><a href="courses.html">Courses</a></nav></div><div class="footer-col"><h4>Blog</h4><nav class="footer-links"><a href="blog.html#students">For Students</a><a href="blog.html#parents">For Parents</a></nav></div><div class="footer-col"><h4>Contact</h4><nav class="footer-links"><a href="contact.html">Book a Free Call</a><a href="mailto:hello@peakgrades.co.uk">Email us</a></nav></div></div></div></div><div class="footer-bottom"><div class="wrap footer-bottom-inner"><span>&copy; 2025 Peak Grades. All rights reserved.</span><div class="footer-bottom-links"><a href="contact.html#privacy">Privacy Policy</a><a href="contact.html#terms">Terms</a></div></div></div></footer>
+<script src="js/main.js"></script>
+<script>
+/* Blog filter */
+(function(){
+  var btns = document.querySelectorAll('.filter-btn');
+  var cards = document.querySelectorAll('.blog-card');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.dataset.filter;
+      cards.forEach(function(card){
+        if(f === 'all' || (card.dataset.category && card.dataset.category.indexOf(f) > -1)){
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

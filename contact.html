@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Book — Peak Grades</title>
+  <meta name="description" content="Get in touch with Peak Grades to book a free discovery call, ask about tutoring, or enquire about courses. We respond within 24 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* ── Contact page layout ─────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 3rem;
+      align-items: start;
+    }
+    /* ── Form card ───────────────────────────────────── */
+    .contact-form-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow);
+    }
+    .contact-form-card h2 {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 900;
+      margin-bottom: .3rem;
+    }
+    .contact-form-card .sub {
+      font-size: .875rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      margin-bottom: 1.1rem;
+    }
+    .form-group label {
+      font-size: .8125rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      font: inherit;
+      font-size: .9375rem;
+      padding: .65rem .875rem;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg);
+      color: var(--text);
+      transition: border-color .15s, box-shadow .15s;
+      outline: none;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(0,137,123,.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      font-size: .8125rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+    .form-consent input[type="checkbox"] {
+      margin-top: 2px;
+      accent-color: var(--teal);
+      flex-shrink: 0;
+    }
+    /* ── Success state ───────────────────────────────── */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+    }
+    .form-success.visible { display: block; }
+    .form-success .success-icon {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: #ecfdf5;
+      display: grid; place-items: center;
+      margin: 0 auto 1.25rem;
+    }
+    .form-success .success-icon svg { width: 28px; height: 28px; color: var(--green); }
+    .form-success h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: .5rem; }
+    .form-success p { font-size: .9375rem; color: var(--text-muted); }
+    /* ── Sidebar ─────────────────────────────────────── */
+    .contact-sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
+    .info-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .info-card h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      padding-bottom: .75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-row {
+      display: flex;
+      gap: .875rem;
+      align-items: flex-start;
+      padding: .65rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .info-row-icon {
+      width: 36px; height: 36px;
+      border-radius: var(--radius);
+      background: var(--teal-light);
+      display: grid; place-items: center;
+      flex-shrink: 0;
+    }
+    .info-row-icon svg { width: 17px; height: 17px; color: var(--teal); }
+    .info-row-text { flex: 1; }
+    .info-row-text strong { display: block; font-size: .875rem; font-weight: 700; }
+    .info-row-text span { font-size: .8125rem; color: var(--text-muted); }
+    /* ── What to expect ──────────────────────────────── */
+    .expect-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+    .expect-list li {
+      display: flex;
+      gap: .625rem;
+      font-size: .875rem;
+      color: var(--text-muted);
+      align-items: flex-start;
+    }
+    .expect-list li::before {
+      content: '';
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--teal);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+      background-size: 12px;
+      background-position: center;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    /* ── FAQ on contact page ─────────────────────────── */
+    .faq-section { max-width: 720px; margin: 0 auto; }
+    /* ── Privacy sections ────────────────────────────── */
+    .policy-section { background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2.5rem; }
+    .policy-section h2 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+    .policy-section p { font-size: .9375rem; color: var(--text-muted); margin-bottom: .75rem; }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section ul { margin: .5rem 0 .75rem 1.25rem; font-size: .9375rem; color: var(--text-muted); }
+    .policy-section ul li { margin-bottom: .3rem; }
+    .policy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-sidebar { order: -1; }
+      .policy-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="top-bar"><div class="wrap top-bar-inner"><div class="top-bar-left"><span>🇬🇧 Online Maths tutoring across the UK</span></div><div class="top-bar-right"><a href="resources.html">Free resources</a><a href="contact.html">Book a free call</a></div></div></div>
+<header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main">Peak Grades</span></div></a>
+  <nav class="main-nav" aria-label="Primary">
+    <div class="nav-item"><a class="nav-link" href="tutoring.html">Tutoring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="tutoring.html#gcse">GCSE Maths</a><a href="tutoring.html#alevel">A-Level Maths</a><a href="tutoring.html#pricing">Pricing</a></div></div>
+    <div class="nav-item"><a class="nav-link" href="resources.html">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="resources.html">GCSE Resources</a><a href="resources.html#alevel">A-Level Resources</a></div></div>
+    <a class="nav-link" href="courses.html">Courses</a>
+    <a class="nav-link" href="blog.html">Blog</a>
+    <a class="nav-link" href="about.html">About</a>
+  </nav>
+  <div class="header-ctas"><a class="btn btn-outline" href="resources.html">Free Resources</a><a class="btn btn-teal active" href="contact.html">Book Free Call</a><button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle><span></span><span></span><span></span></button></div>
+</div></header>
+<nav id="mobile-nav" class="mobile-nav"><a class="mobile-nav-link" href="tutoring.html" data-close-nav>Tutoring</a><a class="mobile-nav-link" href="resources.html" data-close-nav>Resources</a><a class="mobile-nav-link" href="courses.html" data-close-nav>Courses</a><a class="mobile-nav-link" href="blog.html" data-close-nav>Blog</a><a class="mobile-nav-link" href="about.html" data-close-nav>About</a><div class="mobile-nav-divider"></div><div class="mobile-nav-ctas"><a class="btn btn-outline btn-block" href="resources.html" data-close-nav>Free Resources</a><a class="btn btn-teal btn-block" href="contact.html" data-close-nav>Book a Free Call</a></div></nav>
+
+<main id="main">
+
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+    <div class="page-hero-eyebrow">📞 Get in Touch</div>
+    <h1>Book your free discovery call<br><em>and let's talk about your goals.</em></h1>
+    <p>No commitment, no pressure. A 15-minute call to understand where you are now, what you need, and whether Peak Grades is the right fit.</p>
+  </div>
+</section>
+
+<!-- ── CONTACT FORM + SIDEBAR ────────────────────────────────── -->
+<section class="section" id="contact">
+  <div class="wrap contact-grid">
+
+    <!-- FORM -->
+    <div class="contact-form-card reveal">
+      <h2>Send us a message</h2>
+      <p class="sub">Fill in the form below and we'll get back to you within 24 hours — usually much sooner.</p>
+
+      <form id="contact-form" novalidate onsubmit="handleContact(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Full name *</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email address *</label>
+            <input type="email" id="cf-email" name="email" placeholder="you@example.com" required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-level">Qualification level *</label>
+            <select id="cf-level" name="level" required>
+              <option value="" disabled selected>Select level</option>
+              <option value="gcse-foundation">GCSE — Foundation</option>
+              <option value="gcse-higher">GCSE — Higher</option>
+              <option value="alevel-y12">A-Level — Year 12</option>
+              <option value="alevel-y13">A-Level — Year 13</option>
+              <option value="further">Further Maths</option>
+              <option value="other">Other / Not sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-board">Exam board</label>
+            <select id="cf-board" name="board">
+              <option value="" disabled selected>Select board</option>
+              <option value="aqa">AQA</option>
+              <option value="edexcel">Edexcel</option>
+              <option value="ocr">OCR</option>
+              <option value="wjec">WJEC</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-service">What are you interested in?</label>
+          <select id="cf-service" name="service">
+            <option value="" disabled selected>Select a service</option>
+            <option value="1-1-tutoring">1-to-1 Tutoring</option>
+            <option value="revision-course">Revision Course</option>
+            <option value="resources">Free Resources</option>
+            <option value="other">General enquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-message">Tell us a bit more *</label>
+          <textarea id="cf-message" name="message" placeholder="E.g. I'm currently predicted a Grade 6 and want to reach a Grade 8. My weakest topics are algebra and simultaneous equations…" required></textarea>
+        </div>
+
+        <div class="form-consent">
+          <input type="checkbox" id="cf-consent" name="consent" required />
+          <label for="cf-consent">I agree to Peak Grades storing my details to respond to this enquiry. See our <a href="#privacy" style="color:var(--teal);text-decoration:underline">Privacy Policy</a>.</label>
+        </div>
+
+        <button type="submit" class="btn btn-teal btn-lg btn-block">Send Message &amp; Book Free Call</button>
+      </form>
+
+      <div class="form-success" id="contact-success">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Message received!</h3>
+        <p>Thanks for getting in touch. We'll be back in touch within 24 hours to arrange your free discovery call.</p>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="contact-sidebar reveal r2">
+
+      <!-- Contact info -->
+      <div class="info-card">
+        <h3>Contact details</h3>
+        <div class="info-row">
+          <div class="info-row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="info-row-text">
+            <strong>Email us</strong>
+            <span>hello@peakgrades.co.uk</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="info-row-text">
+            <strong>Response time</strong>
+            <span>Within 24 hours (usually same day)</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="info-row-text">
+            <strong>First lesson availability</strong>
+            <span>Usually within 3–5 days of enquiry</span>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-row-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="info-row-text">
+            <strong>Lessons delivered via</strong>
+            <span>Online (Zoom + shared whiteboard)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- What to expect -->
+      <div class="info-card">
+        <h3>What happens next?</h3>
+        <ul class="expect-list">
+          <li>We read your message and prepare for the call</li>
+          <li>You receive a reply within 24 hours with a booking link</li>
+          <li>A free 15-min discovery call — we get to know your goals</li>
+          <li>We match you to the right service and plan your first session</li>
+          <li>First lesson scheduled, usually within a week</li>
+        </ul>
+      </div>
+
+      <!-- No-obligation CTA -->
+      <div class="info-card" style="background:linear-gradient(135deg,var(--navy),#1a3a4a);border-color:transparent;color:#fff;">
+        <h3 style="color:#fff;border-color:rgba(255,255,255,.15);">100% free to enquire</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.75);margin-bottom:1.25rem">There's no obligation whatsoever. The discovery call is completely free and you can decide afterwards whether tutoring is right for you.</p>
+        <div style="display:flex;flex-direction:column;gap:.6rem;">
+          <div style="display:flex;gap:.6rem;align-items:center;font-size:.875rem;">
+            <span style="color:var(--teal-mid);">✓</span> No sign-up fee
+          </div>
+          <div style="display:flex;gap:.6rem;align-items:center;font-size:.875rem;">
+            <span style="color:var(--teal-mid);">✓</span> Cancel anytime
+          </div>
+          <div style="display:flex;gap:.6rem;align-items:center;font-size:.875rem;">
+            <span style="color:var(--teal-mid);">✓</span> First lesson satisfaction guarantee
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ───────────────────────────────────────────────────── -->
+<section class="section" style="background:var(--bg-soft);" id="faq">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="eyebrow">Questions</div>
+      <h2>Frequently asked questions</h2>
+      <p>Everything you need to know before getting in touch.</p>
+    </div>
+    <div class="faq-section reveal">
+      <ul class="faq-list">
+        <li class="faq-item">
+          <details>
+            <summary>How does the free discovery call work?</summary>
+            <p>It's a 15-minute video call (usually on Zoom) where we talk through where you are now, what topics you're finding difficult, and what your target grade is. There's no pressure — it's just a chance to make sure we're a good fit before committing to anything.</p>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>How quickly can I start tutoring?</summary>
+            <p>In most cases we can schedule a first session within 3–5 days of your initial enquiry. If you have an upcoming mock or exam and need something sooner, let us know in your message and we'll do our best to fast-track it.</p>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>Do I need to commit to a set number of sessions?</summary>
+            <p>No — there's no minimum commitment. Many students book regular weekly sessions, but you're free to book ad hoc, pause, or stop at any time. We recommend at least 4–6 sessions to start seeing consistent improvement, but it's entirely up to you.</p>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>What if I'm not happy after the first lesson?</summary>
+            <p>We offer a first-lesson satisfaction guarantee. If you don't feel the session was worthwhile, just let us know and you won't be charged. We want you to feel confident you're in the right hands before continuing.</p>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>Which exam boards do you cover?</summary>
+            <p>We cover AQA, Edexcel, and OCR for both GCSE and A-Level Maths, as well as WJEC for students in Wales. If you're unsure which board you're on, just mention your school and we can find out for you.</p>
+          </details>
+        </li>
+        <li class="faq-item">
+          <details>
+            <summary>How do online lessons work?</summary>
+            <p>Lessons take place over Zoom using a shared digital whiteboard (Bitpaper or Google Jamboard) so you can write and draw exactly as you would on paper. You'll need a device with a camera, a stable internet connection, and ideally a stylus or graphics tablet — though a mouse works fine too.</p>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRIVACY / TERMS / COOKIES ──────────────────────────────── -->
+<section class="section" id="privacy">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <div class="eyebrow">Legal</div>
+      <h2>Privacy, Terms &amp; Cookies</h2>
+      <p>We keep things simple and transparent. Here's how we handle your data.</p>
+    </div>
+    <div class="policy-grid reveal">
+      <div class="policy-section">
+        <h2>Privacy Policy</h2>
+        <p>Peak Grades takes your privacy seriously. We only collect the information you provide directly (name, email, enquiry details) and use it solely to respond to your enquiry and deliver the service you've requested.</p>
+        <p>We do not sell, trade, or transfer your personal data to third parties. We do not use your data for automated profiling or marketing without your explicit consent.</p>
+        <ul>
+          <li>Data is stored securely and deleted within 12 months of last contact if no tutoring relationship continues.</li>
+          <li>You can request to see, correct, or delete your data at any time by emailing hello@peakgrades.co.uk.</li>
+          <li>This website is hosted in the UK/EU and complies with UK GDPR.</li>
+        </ul>
+        <p>Last updated: May 2026.</p>
+      </div>
+      <div>
+        <div class="policy-section" style="margin-bottom:1.5rem" id="terms">
+          <h2>Terms of Service</h2>
+          <p>By booking tutoring sessions with Peak Grades you agree to the following:</p>
+          <ul>
+            <li>Sessions cancelled with less than 24 hours' notice may be charged at 50% of the session rate.</li>
+            <li>Payment is due before or at the time of each session unless a package has been pre-purchased.</li>
+            <li>Peak Grades reserves the right to end a tutoring relationship if sessions are repeatedly missed without notice.</li>
+          </ul>
+          <p>Full terms are provided on booking confirmation.</p>
+        </div>
+        <div class="policy-section" id="cookies">
+          <h2>Cookie Policy</h2>
+          <p>This website uses only essential cookies — no tracking, advertising, or analytics cookies are set without your consent. We do not use Google Analytics or third-party ad networks.</p>
+          <p>Essential cookies include those required for the site to function (e.g., form session state). You can disable cookies in your browser settings, though this may affect some functionality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ─────────────────────────────────────────────── -->
+<section class="newsletter-band">
+  <div class="wrap newsletter-inner">
+    <div class="newsletter-text">
+      <h2>Free resources, revision tips &amp; exam updates — straight to your inbox.</h2>
+      <p>Join 1,000+ students and parents already subscribed. Unsubscribe anytime.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+      <input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address" required />
+      <button type="submit" class="btn btn-white">Subscribe Free</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand-col">
+        <a class="brand" href="index.html" style="margin-bottom:1rem"><div class="brand-icon" style="background:rgba(255,255,255,.08);color:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main" style="color:#fff">Peak Grades</span><span class="brand-name-sub" style="color:rgba(255,255,255,.5)">Maths Tutoring</span></div></a>
+        <p class="footer-tagline">Expert GCSE &amp; A-Level Maths tutoring, free revision resources, and structured courses — all in one place.</p>
+        <div class="footer-badges"><span class="badge badge-free">Free Resources</span><span class="badge" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7)">Grade 9 / A*</span></div>
+      </div>
+      <div class="footer-col">
+        <h4>Tutoring</h4>
+        <ul><li><a href="tutoring.html#gcse">GCSE Maths</a></li><li><a href="tutoring.html#alevel">A-Level Maths</a></li><li><a href="tutoring.html#further">Further Maths</a></li><li><a href="tutoring.html#pricing">Pricing</a></li><li><a href="contact.html">Book Free Call</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul><li><a href="resources.html">All Resources</a></li><li><a href="resources.html">GCSE Worksheets</a></li><li><a href="resources.html">A-Level Notes</a></li><li><a href="resources.html">Exam Technique</a></li><li><a href="resources.html">Past Paper Tips</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="courses.html">Courses</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul><li><a href="contact.html#privacy">Privacy Policy</a></li><li><a href="contact.html#terms">Terms of Service</a></li><li><a href="contact.html#cookies">Cookie Policy</a></li></ul>
+        <h4 style="margin-top:1.5rem">Follow</h4>
+        <ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">YouTube</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Peak Grades. All rights reserved.</p>
+      <p>Built for students, by a student.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  /* Contact form submission */
+  function handleContact(e) {
+    e.preventDefault();
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('contact-success');
+    form.style.display = 'none';
+    success.classList.add('visible');
+  }
+</script>
+</body>
+</html>

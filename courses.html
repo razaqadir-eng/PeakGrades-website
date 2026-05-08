@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revision Courses &amp; Exam Prep — Peak Grades</title>
+  <meta name="description" content="Structured revision courses and exam preparation for GCSE and A-Level Maths. Mock support, booster sessions and intensive revision programmes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .course-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem; }
+    .course-card { background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:box-shadow .2s,transform .2s; display:flex;flex-direction:column; }
+    .course-card:hover { box-shadow:var(--shadow-lg);transform:translateY(-3px); }
+    .course-card-head { padding:1.5rem 1.75rem 0; }
+    .course-tag { display:inline-flex;align-items:center;gap:.35rem;padding:.3rem .75rem;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:.9rem; }
+    .course-card h3 { font-size:1.1rem;font-weight:800;margin-bottom:.45rem; }
+    .course-card > p { font-size:.875rem;color:var(--text-muted);padding:0 1.75rem;margin-bottom:1.1rem; }
+    .course-meta { display:flex;gap:1rem;flex-wrap:wrap;padding:0 1.75rem 1.1rem;font-size:.8125rem;color:var(--text-muted); }
+    .course-meta-item { display:flex;align-items:center;gap:.35rem; }
+    .course-meta-item svg { width:14px;height:14px;color:var(--teal); }
+    .course-includes { padding:1.1rem 1.75rem;background:var(--bg-soft);border-top:1px solid var(--border);flex:1; }
+    .course-includes h4 { font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.75rem; }
+    .course-includes ul { display:grid;gap:.4rem; }
+    .course-includes li { display:flex;align-items:center;gap:.5rem;font-size:.8125rem; }
+    .course-includes li::before { content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0; }
+    .course-footer { padding:1.25rem 1.75rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap; }
+    .course-price { font-family:var(--font-serif);font-size:1.5rem;font-weight:900;color:var(--teal); }
+    .course-price sub { font-size:.875rem;font-family:var(--font-sans);color:var(--text-muted);font-weight:400; }
+    .featured-course { border-color:var(--teal);box-shadow:0 0 0 2px var(--teal); }
+    .featured-course .course-includes { background:var(--teal-light); }
+    .schedule-grid { display:grid;grid-template-columns:1fr 1fr;gap:1.5rem; }
+    .schedule-card { background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem; }
+    .schedule-head { display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem; }
+    .schedule-card h3 { font-size:1.05rem;font-weight:700; }
+    .session-list { display:grid;gap:.6rem; }
+    .session-item { display:flex;align-items:center;gap:.75rem;padding:.75rem;background:var(--bg-soft);border-radius:var(--radius);font-size:.875rem; }
+    .session-dot { width:10px;height:10px;border-radius:50%;flex-shrink:0; }
+    .session-dot.avail { background:#16a34a; }
+    .session-dot.filling { background:#f59e0b; }
+    .session-dot.full { background:#dc2626; }
+    @media(max-width:860px){ .course-grid{grid-template-columns:1fr 1fr;} .schedule-grid{grid-template-columns:1fr;} }
+    @media(max-width:560px){ .course-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="top-bar"><div class="wrap top-bar-inner"><div class="top-bar-left"><span>🇬🇧 Online Maths tutoring across the UK</span></div><div class="top-bar-right"><a href="resources.html">Free resources</a><a href="contact.html">Book a free call</a></div></div></div>
+<header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main">Peak Grades</span></div></a>
+  <nav class="main-nav" aria-label="Primary">
+    <div class="nav-item"><a class="nav-link" href="tutoring.html">Tutoring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="tutoring.html#gcse">GCSE Maths</a><a href="tutoring.html#alevel">A-Level Maths</a><a href="tutoring.html#pricing">Pricing</a></div></div>
+    <div class="nav-item"><a class="nav-link" href="resources.html">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="resources.html">GCSE Resources</a><a href="resources.html#alevel">A-Level Resources</a></div></div>
+    <a class="nav-link active" href="courses.html">Courses</a>
+    <a class="nav-link" href="blog.html">Blog</a>
+    <a class="nav-link" href="about.html">About</a>
+  </nav>
+  <div class="header-ctas"><a class="btn btn-outline" href="resources.html">Free Resources</a><a class="btn btn-teal" href="contact.html">Book Free Call</a><button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle><span></span><span></span><span></span></button></div>
+</div></header>
+<nav id="mobile-nav" class="mobile-nav"><a class="mobile-nav-link" href="tutoring.html" data-close-nav>Tutoring</a><a class="mobile-nav-link" href="resources.html" data-close-nav>Resources</a><a class="mobile-nav-link" href="courses.html" data-close-nav>Courses</a><a class="mobile-nav-link" href="blog.html" data-close-nav>Blog</a><a class="mobile-nav-link" href="about.html" data-close-nav>About</a><div class="mobile-nav-divider"></div><div class="mobile-nav-ctas"><a class="btn btn-outline btn-block" href="resources.html" data-close-nav>Free Resources</a><a class="btn btn-teal btn-block" href="contact.html" data-close-nav>Book a Free Call</a></div></nav>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Courses</span></div>
+    <div class="page-hero-eyebrow">📚 Structured revision programmes</div>
+    <h1>Revision Courses &amp; <em>Exam Preparation.</em></h1>
+    <p>Structured short-course programmes for GCSE and A-Level Maths — intensive revision, mock exam practice, and targeted preparation for the real thing.</p>
+    <div class="page-hero-actions"><a class="btn btn-white btn-lg" href="#courses">View courses</a><a class="btn btn-ghost-white btn-lg" href="contact.html">Get in touch</a></div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="section section-alt" id="courses">
+  <div class="wrap">
+    <div class="section-header-row">
+      <div class="section-header reveal"><div class="eyebrow">GCSE Maths</div><h2>GCSE revision courses.</h2><p>Structured programmes built around the most common exam topics and mark-scoring techniques.</p></div>
+    </div>
+    <div class="course-grid">
+      <article class="course-card reveal">
+        <div class="course-card-head">
+          <div class="course-tag" style="background:#dbeafe;color:#1d4ed8">GCSE · Foundation &amp; Higher</div>
+          <h3>Easter Revision Intensive</h3>
+        </div>
+        <p>A focused 4-session programme covering the highest-mark topics in the Easter break before the summer exams.</p>
+        <div class="course-meta">
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>4 sessions · 60 min each</span>
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>April 2025</span>
+        </div>
+        <div class="course-includes">
+          <h4>What's included</h4>
+          <ul>
+            <li>Algebra &amp; Quadratics deep-dive</li>
+            <li>Geometry &amp; Trigonometry focus</li>
+            <li>Exam technique masterclass</li>
+            <li>Revision notes for all topics covered</li>
+          </ul>
+        </div>
+        <div class="course-footer"><div class="course-price">£95<sub> total</sub></div><a class="btn btn-teal btn-sm" href="contact.html">Book now</a></div>
+      </article>
+      <article class="course-card featured-course reveal r2">
+        <div class="course-card-head">
+          <div class="course-tag" style="background:#dcfce7;color:#15803d">GCSE · Most Popular</div>
+          <h3>Mock Exam Preparation</h3>
+        </div>
+        <p>Dedicated sessions timed around your mock exam period — past papers, mark-scheme analysis, and technique under timed conditions.</p>
+        <div class="course-meta">
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3–6 sessions · flexible</span>
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Year-round</span>
+        </div>
+        <div class="course-includes">
+          <h4>What's included</h4>
+          <ul>
+            <li>2 full timed past papers per session</li>
+            <li>Mark-scheme walkthrough &amp; feedback</li>
+            <li>Targeted topic follow-ups</li>
+            <li>Exam technique + common mistakes guide</li>
+            <li>Post-course progress summary</li>
+          </ul>
+        </div>
+        <div class="course-footer"><div class="course-price">£35<sub>/session</sub></div><a class="btn btn-teal btn-sm" href="contact.html">Book now</a></div>
+      </article>
+      <article class="course-card reveal r3">
+        <div class="course-card-head">
+          <div class="course-tag" style="background:#fef3c7;color:#92400e">GCSE · Last-minute boost</div>
+          <h3>Final Exam Sprint</h3>
+        </div>
+        <p>An intensive 2-session programme in the week before exams — targeted topic recap, mark-scoring strategies and confidence-building.</p>
+        <div class="course-meta">
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>2 sessions · 90 min each</span>
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>May / June</span>
+        </div>
+        <div class="course-includes">
+          <h4>What's included</h4>
+          <ul>
+            <li>Top 15 most-tested topics recap</li>
+            <li>Formula sheet walkthroughs</li>
+            <li>Exam-day strategy session</li>
+            <li>Quick-reference revision card</li>
+          </ul>
+        </div>
+        <div class="course-footer"><div class="course-price">£75<sub> total</sub></div><a class="btn btn-teal btn-sm" href="contact.html">Book now</a></div>
+      </article>
+    </div>
+
+    <div class="section-header-row mt-4">
+      <div class="section-header reveal"><div class="eyebrow">A-Level Maths</div><h2>A-Level revision courses.</h2><p>In-depth intensive programmes for A-Level Maths across all components.</p></div>
+    </div>
+    <div class="course-grid">
+      <article class="course-card reveal">
+        <div class="course-card-head">
+          <div class="course-tag" style="background:#ede9fe;color:#6d28d9">A-Level · Year 12</div>
+          <h3>Year 12 Consolidation</h3>
+        </div>
+        <p>End-of-year review to make sure core Year 12 content is solid before starting Year 13 — calculus, algebra and trigonometry focus.</p>
+        <div class="course-meta">
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>4 sessions · 60 min</span>
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>June / July</span>
+        </div>
+        <div class="course-includes">
+          <h4>What's included</h4>
+          <ul>
+            <li>Full Year 12 topic review</li>
+            <li>Integration &amp; differentiation mastery</li>
+            <li>Common Year 13 entry mistakes</li>
+            <li>Revision summary notes</li>
+          </ul>
+        </div>
+        <div class="course-footer"><div class="course-price">£120<sub> total</sub></div><a class="btn btn-teal btn-sm" href="contact.html">Book now</a></div>
+      </article>
+      <article class="course-card featured-course reveal r2">
+        <div class="course-card-head">
+          <div class="course-tag" style="background:#dcfce7;color:#15803d">A-Level · Most Popular</div>
+          <h3>A-Level Exam Booster</h3>
+        </div>
+        <p>Intensive pre-exam programme for Year 13 students — full paper practice, examiner mark scheme analysis, and targeted topic support.</p>
+        <div class="course-meta">
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5 sessions · 60–90 min</span>
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>May / June</span>
+        </div>
+        <div class="course-includes">
+          <h4>What's included</h4>
+          <ul>
+            <li>Paper 1, 2 &amp; 3 full timed practice</li>
+            <li>Mark-scheme feedback session</li>
+            <li>Statistics &amp; Mechanics deep-dives</li>
+            <li>Exam technique guide</li>
+            <li>Post-course progress summary</li>
+          </ul>
+        </div>
+        <div class="course-footer"><div class="course-price">£45<sub>/session</sub></div><a class="btn btn-teal btn-sm" href="contact.html">Book now</a></div>
+      </article>
+      <article class="course-card reveal r3">
+        <div class="course-card-head">
+          <div class="course-tag" style="background:#fef3c7;color:#92400e">A-Level · On demand</div>
+          <h3>Topic Booster Sessions</h3>
+        </div>
+        <p>Single or double sessions focusing on one specific topic — great for students who are strong overall but have one weak area dragging their grade.</p>
+        <div class="course-meta">
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1–2 sessions</span>
+          <span class="course-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Year-round</span>
+        </div>
+        <div class="course-includes">
+          <h4>Popular topics</h4>
+          <ul>
+            <li>Integration by parts &amp; substitution</li>
+            <li>Differential equations</li>
+            <li>Hypothesis testing</li>
+            <li>Projectiles &amp; moments</li>
+          </ul>
+        </div>
+        <div class="course-footer"><div class="course-price">£45<sub>/hr</sub></div><a class="btn btn-teal btn-sm" href="contact.html">Book now</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOW COURSES WORK -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-header center reveal"><div class="eyebrow">How it works</div><h2>From booking to results.</h2></div>
+    <div class="grid-3">
+      <div class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3>Pick your course</h3><p>Browse the course options above, then contact me to check availability and confirm the schedule that fits best around your timetable.</p></div>
+      <div class="card reveal r2"><div class="card-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><h3>Pre-course resources</h3><p>Before we start I'll send over any prep material — revision notes, a topic checklist and a breakdown of what each session will cover.</p></div>
+      <div class="card reveal r3"><div class="card-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>Sessions &amp; follow-up</h3><p>Structured sessions with post-session notes and homework. After the course ends you'll have a full summary of progress and recommended next steps.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-alt">
+  <div class="wrap" style="max-width:780px">
+    <div class="section-header center reveal"><div class="eyebrow">FAQ</div><h2>Course questions.</h2></div>
+    <div class="faq-list reveal">
+      <details open><summary>Are courses one-to-one or in groups?<span class="faq-chevron">▾</span></summary><div class="faq-body">All courses and sessions are one-to-one. This means every session is tailored to you — no time wasted on topics you already understand.</div></details>
+      <details><summary>Can I book a course and regular tutoring together?<span class="faq-chevron">▾</span></summary><div class="faq-body">Yes, and many students do exactly that. Regular weekly sessions alongside a focused pre-exam course is the most effective combination.</div></details>
+      <details><summary>How do I pay?<span class="faq-chevron">▾</span></summary><div class="faq-body">Payment details are confirmed when you book. Course packages are paid upfront; individual sessions are paid session-by-session. Bank transfer or card accepted.</div></details>
+      <details><summary>What if I need to cancel or reschedule?<span class="faq-chevron">▾</span></summary><div class="faq-body">Please give at least 24 hours' notice. Sessions cancelled with less than 24 hours' notice may not be rescheduled. Life happens — just let me know as early as possible.</div></details>
+    </div>
+  </div>
+</section>
+
+<div class="newsletter-band"><div class="wrap newsletter-inner"><div class="newsletter-copy reveal"><h2>Get notified when new courses are added.</h2><p>New revision programmes added throughout the year — be the first to know.</p></div><div class="reveal r2"><form class="newsletter-form-row" onsubmit="handleNewsletter(event)"><input class="newsletter-input" type="email" placeholder="Enter your email" required autocomplete="email" aria-label="Email"/><button class="btn btn-white" type="submit">Notify me</button></form><p class="newsletter-note">Free. No spam.</p></div></div></div>
+</main>
+
+<footer class="site-footer"><div class="footer-main"><div class="wrap"><div class="footer-grid"><div class="footer-brand-col"><a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main" style="color:#fff">Peak Grades</span></div></a><p>Expert GCSE and A-Level Maths tutoring for UK students.</p></div><div class="footer-col"><h4>Resources</h4><nav class="footer-links"><a href="resources.html">GCSE Resources</a><a href="resources.html#alevel">A-Level Resources</a></nav></div><div class="footer-col"><h4>Tutoring</h4><nav class="footer-links"><a href="tutoring.html#gcse">GCSE Maths</a><a href="tutoring.html#alevel">A-Level Maths</a><a href="tutoring.html#pricing">Pricing</a></nav></div><div class="footer-col"><h4>About</h4><nav class="footer-links"><a href="about.html">About Us</a><a href="blog.html">Blog</a></nav></div><div class="footer-col"><h4>Contact</h4><nav class="footer-links"><a href="contact.html">Book a Free Call</a><a href="mailto:hello@peakgrades.co.uk">Email us</a></nav></div></div></div></div><div class="footer-bottom"><div class="wrap footer-bottom-inner"><span>&copy; 2025 Peak Grades. All rights reserved.</span><div class="footer-bottom-links"><a href="contact.html#privacy">Privacy Policy</a><a href="contact.html#terms">Terms</a></div></div></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>
