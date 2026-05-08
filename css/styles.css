@@ -501,7 +501,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--teal-l
 
 /* ── Subject icon colour tokens ───────────────────────────── */
 .subj-bio   { background:#dcfce7;color:#16a34a; }
-.subj-chem  { background:#dbeafe;color:#2563eb; }
+.subj-chem  { background:#d1fae5;color:#059669; }
 .subj-phys  { background:#ffedd5;color:#ea580c; }
 .subj-maths { background:var(--teal-light);color:var(--teal); }
 .subj-eng   { background:#f3e8ff;color:#9333ea; }
@@ -509,7 +509,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--teal-l
 .subj-fm    { background:#cffafe;color:#0e7490; }
 
 .t-icon.bio  { background:#dcfce7;color:#16a34a; }
-.t-icon.chem { background:#dbeafe;color:#2563eb; }
+.t-icon.chem { background:#d1fae5;color:#059669; }
 .t-icon.phys { background:#ffedd5;color:#ea580c; }
 .t-icon.eng  { background:#f3e8ff;color:#9333ea; }
 .t-icon.geo  { background:#fef9c3;color:#854d0e; }
