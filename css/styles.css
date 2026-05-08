@@ -507,6 +507,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--teal-l
 .subj-eng   { background:#f3e8ff;color:#9333ea; }
 .subj-geo   { background:#fef9c3;color:#854d0e; }
 .subj-fm    { background:#cffafe;color:#0e7490; }
+.subj-cs    { background:#ede9fe;color:#7c3aed; }
 
 .t-icon.bio  { background:#fce7f3;color:#db2777; }
 .t-icon.chem { background:#d1fae5;color:#059669; }
@@ -514,6 +515,7 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--teal-l
 .t-icon.eng  { background:#f3e8ff;color:#9333ea; }
 .t-icon.geo  { background:#fef9c3;color:#854d0e; }
 .t-icon.fm   { background:#cffafe;color:#0e7490; }
+.t-icon.cs   { background:#ede9fe;color:#7c3aed; }
 
 /* ── Subject course cards (courses page) ──────────────────── */
 .subj-course-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem; }
