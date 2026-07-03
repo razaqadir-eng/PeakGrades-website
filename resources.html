@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free GCSE &amp; A-Level Revision Resources — Peak Grades</title>
-  <meta name="description" content="Free GCSE and A-Level revision resources for Maths and Physics. Worksheets, concise notes, past paper guides and exam technique — no sign-up required." />
+  <title>Free GCSE Revision Resources — Peak Grades</title>
+  <meta name="description" content="Free GCSE revision resources for Maths, English, Biology, Chemistry and Physics. Worksheets, concise notes, past paper guides and exam technique — no sign-up required." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
@@ -42,25 +43,32 @@
     .level-tabs { display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap; }
     .level-tab { padding:9px 22px;border-radius:6px;font-size:14px;font-weight:700;border:2px solid var(--border);color:var(--text-muted);cursor:pointer;transition:.15s;background:var(--bg); }
     .level-tab.active,.level-tab:hover { border-color:var(--teal);color:var(--teal);background:var(--teal-light); }
+    .yt-embed-card { position:relative;max-width:720px;margin:0 auto;aspect-ratio:16/9;border-radius:var(--radius-lg);overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,#1a3a4a 55%,#0d4d45 100%);box-shadow:var(--shadow-lg); }
+    .yt-facade { position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:none;border:0;cursor:pointer;color:#fff; }
+    .yt-play-btn { width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.3);display:grid;place-items:center;transition:transform .2s,background .2s; }
+    .yt-play-btn svg { width:26px;height:26px;margin-left:4px; }
+    .yt-facade:hover .yt-play-btn, .yt-facade:focus-visible .yt-play-btn { background:var(--teal);border-color:var(--teal);transform:scale(1.06); }
+    .yt-facade-label { font-size:.9375rem;font-weight:600; }
+    .yt-embed-card iframe { width:100%;height:100%;border:0;display:block; }
     @media(max-width:860px){ .topic-grid{grid-template-columns:1fr 1fr;} .resource-type-grid{grid-template-columns:1fr 1fr;} }
     @media(max-width:560px){ .topic-grid{grid-template-columns:1fr;} .resource-type-grid{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
-<div class="top-bar"><div class="wrap top-bar-inner"><div class="top-bar-left"><span>🇬🇧 Online tutoring across the UK</span><a href="contact.html">Book a free call</a></div><div class="top-bar-right"><a href="mailto:hello@peakgrades.co.uk">hello@peakgrades.co.uk</a></div></div></div>
+<div class="top-bar"><div class="wrap top-bar-inner"><div class="top-bar-left"><span>🇬🇧 Online tutoring across the UK</span><a href="contact.html">Book your free week</a></div><div class="top-bar-right"><a href="mailto:hello@peakgrades.co.uk">hello@peakgrades.co.uk</a></div></div></div>
 <header class="site-header"><div class="wrap header-inner">
   <a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main">Peak Grades</span></div></a>
   <nav class="main-nav" aria-label="Primary">
-    <div class="nav-item"><a class="nav-link" href="tutoring.html">Tutoring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="tutoring.html#gcse">GCSE Subjects</a><a href="tutoring.html#alevel">A-Level Subjects</a><div class="dropdown-divider"></div><a href="tutoring.html#pricing">Pricing</a><a href="contact.html">Book a Free Call</a></div></div>
-    <div class="nav-item"><a class="nav-link active" href="resources.html">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown dropdown-wide"><div class="dropdown-cols"><div><div class="dropdown-label">GCSE</div><a href="resources.html#maths-gcse">Maths</a><a href="resources.html#english-gcse">English</a><a href="resources.html#combined-gcse">Combined Science</a><a href="resources.html#biology-gcse">Biology</a><a href="resources.html#chemistry-gcse">Chemistry</a><a href="resources.html#physics-gcse">Physics</a></div><div><div class="dropdown-label">A-Level</div><a href="resources.html#maths-alevel">Maths</a><a href="resources.html#biology-alevel">Biology</a><a href="resources.html#chemistry-alevel">Chemistry</a><a href="resources.html#physics-alevel">Physics</a></div></div></div></div>
+    <div class="nav-item"><a class="nav-link" href="tutoring.html">Tutoring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="tutoring.html#gcse">GCSE Subjects</a><div class="dropdown-divider"></div><a href="tutoring.html#pricing">Pricing</a><a href="contact.html">Book Your Free Week</a></div></div>
+    <div class="nav-item"><a class="nav-link active" href="resources.html">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="resources.html#maths-gcse">Maths</a><a href="resources.html#english-gcse">English</a><a href="resources.html#biology-gcse">Biology</a><a href="resources.html#chemistry-gcse">Chemistry</a><a href="resources.html#physics-gcse">Physics</a></div></div>
     <a class="nav-link" href="courses.html">Courses</a>
     <a class="nav-link" href="blog.html">Blog</a>
     <a class="nav-link" href="about.html">About</a>
   </nav>
-  <div class="header-ctas"><a class="btn btn-outline" href="resources.html">Free Resources</a><a class="btn btn-teal" href="contact.html">Book Free Call</a><button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle><span></span><span></span><span></span></button></div>
+  <div class="header-ctas"><a class="btn btn-outline" href="resources.html">Free Resources</a><a class="btn btn-teal" href="contact.html">Book Free Week</a><button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle><span></span><span></span><span></span></button></div>
 </div></header>
-<nav id="mobile-nav" class="mobile-nav"><a class="mobile-nav-link" href="tutoring.html" data-close-nav>Tutoring</a><a class="mobile-nav-link active" href="resources.html" data-close-nav>Resources</a><a class="mobile-nav-link" href="courses.html" data-close-nav>Courses</a><a class="mobile-nav-link" href="blog.html" data-close-nav>Blog</a><a class="mobile-nav-link" href="about.html" data-close-nav>About</a><div class="mobile-nav-divider"></div><div class="mobile-nav-ctas"><a class="btn btn-outline btn-block" href="resources.html" data-close-nav>Free Resources</a><a class="btn btn-teal btn-block" href="contact.html" data-close-nav>Book a Free Call</a></div></nav>
+<nav id="mobile-nav" class="mobile-nav"><a class="mobile-nav-link" href="tutoring.html" data-close-nav>Tutoring</a><a class="mobile-nav-link active" href="resources.html" data-close-nav>Resources</a><a class="mobile-nav-link" href="courses.html" data-close-nav>Courses</a><a class="mobile-nav-link" href="blog.html" data-close-nav>Blog</a><a class="mobile-nav-link" href="about.html" data-close-nav>About</a><div class="mobile-nav-divider"></div><div class="mobile-nav-ctas"><a class="btn btn-outline btn-block" href="resources.html" data-close-nav>Free Resources</a><a class="btn btn-teal btn-block" href="contact.html" data-close-nav>Book Your Free Week</a></div></nav>
 
 <main id="main">
 <section class="page-hero">
@@ -68,48 +76,28 @@
     <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Resources</span></div>
     <div class="page-hero-eyebrow">📄 Free to download — no sign-up needed</div>
     <h1>Browse our free, high quality <em>revision resources.</em></h1>
-    <p>Worksheets, concise topic notes, past paper guides and exam technique resources for GCSE and A-Level Maths and Physics — created to help students revise smarter.</p>
-    <div class="page-hero-actions"><a class="btn btn-white btn-lg" href="#gcse">GCSE Resources</a><a class="btn btn-ghost-white btn-lg" href="#alevel">A-Level Resources</a></div>
+    <p>Worksheets, concise topic notes, past paper guides and exam technique resources for GCSE Maths, English, Biology, Chemistry and Physics — created to help students revise smarter.</p>
+    <div class="page-hero-actions"><a class="btn btn-white btn-lg" href="#gcse">GCSE Resources</a></div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <!-- Resource type cards -->
-    <div class="section-header center reveal"><div class="eyebrow">Resource types</div><h2>Three ways to revise.</h2><p>Choose the format that suits you — from quick-reference notes to full practice paper guides.</p></div>
-    <div class="resource-type-grid">
-      <div class="rtype-card reveal">
-        <div class="rtype-icon" style="background:#eff6ff;color:#2563eb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6M3 15h6"/></svg></div>
-        <h3>Topic Worksheets</h3>
-        <p>Targeted practice questions for every major topic, with space to show working. Ideal for consolidating a lesson or practising weak areas.</p>
-        <a class="btn btn-teal btn-sm" href="#gcse">Browse worksheets</a>
-      </div>
-      <div class="rtype-card reveal r2">
-        <div class="rtype-icon" style="background:#f0fdf4;color:#16a34a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-        <h3>Revision Notes</h3>
-        <p>Concise one-page summaries with the key method, worked examples and common mistakes. Great for quick review before a lesson or exam.</p>
-        <a class="btn btn-teal btn-sm" href="#gcse">Browse notes</a>
-      </div>
-      <div class="rtype-card reveal r3">
-        <div class="rtype-icon" style="background:#fff7ed;color:#ea580c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-        <h3>Exam Technique Guides</h3>
-        <p>Practical guides on timing, showing working for method marks, calculator use and what to do when you're stuck — the skills textbooks skip.</p>
-        <a class="btn btn-teal btn-sm" href="#exam-technique">Browse guides</a>
-      </div>
+    <!-- Video lessons -->
+    <div class="section-header center reveal"><div class="eyebrow">Video Lessons</div><h2>Watch &amp; learn on YouTube.</h2><p>Free video lessons and quick-fire shorts covering exam technique and common GCSE topics — new videos added regularly.</p></div>
+    <div class="yt-embed-card reveal">
+      <button class="yt-facade" type="button" aria-label="Play the latest video from Peak Grades on YouTube" data-yt-playlist="UU_hq0Ibf0yKhc4D6pyEIttw">
+        <span class="yt-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span>
+        <span class="yt-facade-label">Watch our latest video</span>
+      </button>
     </div>
-
-    <!-- Level tabs -->
-    <div class="level-tabs" role="tablist">
-      <button class="level-tab active" data-level="gcse" role="tab" aria-selected="true">GCSE</button>
-      <button class="level-tab" data-level="alevel" role="tab" aria-selected="false">A-Level</button>
-    </div>
+    <p style="text-align:center;margin-top:1.25rem"><a class="btn btn-outline" href="https://www.youtube.com/@PeakGrades-html" target="_blank" rel="noopener">Subscribe on YouTube →</a></p>
 
     <!-- ══ GCSE ══ -->
     <div id="gcse" data-level-content="gcse">
       <div class="subj-tabs">
         <button class="subj-tab active" data-subj="maths">Maths</button>
         <button class="subj-tab" data-subj="english">English</button>
-        <button class="subj-tab" data-subj="combined">Combined Science</button>
         <button class="subj-tab" data-subj="biology">Biology</button>
         <button class="subj-tab" data-subj="chemistry">Chemistry</button>
         <button class="subj-tab" data-subj="physics">Physics</button>
@@ -176,28 +164,6 @@
           </div>
         </div>
       </div><!-- /gcse english panel -->
-
-      <!-- GCSE COMBINED SCIENCE -->
-      <div data-subj-panel="combined" style="display:none">
-        <div class="subject-section reveal">
-          <h3 id="combined-gcse" style="border-color:#7c3aed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#7c3aed"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Biology &amp; Chemistry</h3>
-          <div class="topic-grid">
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Cell Biology</h4><p>Cell structure, transport and division — all Combined Science Biology content.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Bioenergetics &amp; Infection</h4><p>Photosynthesis, respiration, communicable diseases and immune response.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a><a class="t-link" href="#">Exam tips</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Atomic Structure &amp; Bonding</h4><p>Atoms, isotopes, ionic and covalent bonding — Combined Science Chemistry content.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Rates &amp; Energy Changes</h4><p>Rates of reaction, energy profiles, electrolysis and chemical analysis.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-          </div>
-        </div>
-        <div class="subject-section reveal">
-          <h3 style="border-color:#7c3aed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#7c3aed"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Physics, Genetics &amp; Ecology</h3>
-          <div class="topic-grid">
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Forces &amp; Electricity</h4><p>Speed, Newton's laws, series and parallel circuits, power and mains electricity.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Waves &amp; Space</h4><p>Wave properties, EM spectrum, radioactivity and space physics.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a><a class="t-link" href="#">Exam tips</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Genetics &amp; Homeostasis</h4><p>DNA, inheritance, homeostasis, the nervous system and hormones.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Ecology</h4><p>Ecosystems, food chains, biodiversity, climate change and sustainability.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-          </div>
-        </div>
-      </div><!-- /gcse combined science panel -->
 
       <!-- GCSE BIOLOGY -->
       <div data-subj-panel="biology" style="display:none">
@@ -266,113 +232,6 @@
       </div><!-- /gcse physics panel -->
     </div><!-- /gcse level -->
 
-    <!-- ══ A-LEVEL ══ -->
-    <div id="alevel" data-level-content="alevel" style="display:none">
-      <div class="subj-tabs">
-        <button class="subj-tab active" data-subj="maths">Maths</button>
-        <button class="subj-tab" data-subj="biology">Biology</button>
-        <button class="subj-tab" data-subj="chemistry">Chemistry</button>
-        <button class="subj-tab" data-subj="physics">Physics</button>
-      </div>
-
-      <!-- A-LEVEL MATHS -->
-      <div data-subj-panel="maths">
-        <div class="subject-section reveal">
-          <h3 id="maths-alevel" style="border-color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Pure Mathematics</h3>
-          <div class="topic-grid">
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon pure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Differentiation</h4><p>Product, quotient &amp; chain rule applications.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a><a class="t-link" href="#">Exam tips</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon pure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Integration</h4><p>Definite, indefinite and integration by parts.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon pure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Proof</h4><p>Proof by deduction, exhaustion and contradiction.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon pure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Functions &amp; Graphs</h4><p>Transformations, composite and inverse functions.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-          </div>
-        </div>
-        <div class="subject-section reveal">
-          <h3 style="border-color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>Mechanics</h3>
-          <div class="topic-grid">
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon mech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Kinematics</h4><p>SUVAT equations and variable acceleration.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon mech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Forces &amp; Newton's Laws</h4><p>Resolving forces, friction and F=ma.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon mech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Moments</h4><p>Turning moments and equilibrium problems.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon mech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Projectiles</h4><p>Horizontal and angled projectile motion.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-          </div>
-        </div>
-        <div class="subject-section reveal">
-          <h3 style="border-color:var(--teal)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg>Statistics</h3>
-          <div class="topic-grid">
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Binomial Distribution</h4><p>P(X=r), cumulative probabilities and modelling.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Normal Distribution</h4><p>Standardising, inverse normal and hypothesis tests.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Hypothesis Testing</h4><p>One and two-tailed tests, critical regions.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Regression &amp; Correlation</h4><p>PMCC, regression lines and interpretation.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-          </div>
-        </div>
-      </div><!-- /alevel maths panel -->
-
-      <!-- A-LEVEL BIOLOGY -->
-      <div data-subj-panel="biology" style="display:none">
-        <div class="subject-section reveal">
-          <h3 id="biology-alevel" style="border-color:#db2777"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#db2777"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Molecules, Cells &amp; Exchange</h3>
-          <div class="topic-grid">
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon bio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Biological Molecules</h4><p>Carbohydrates, lipids, proteins, enzymes and water's role in biology.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a><a class="t-link" href="#">Exam tips</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon bio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Cell Structure &amp; Division</h4><p>Ultrastructure of cells, mitosis, meiosis and the cell cycle.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon bio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Exchange &amp; Transport</h4><p>Gas exchange, the circulatory system, mass transport and the kidney.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon bio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Immunity</h4><p>Specific and non-specific immunity, vaccines, antibodies and HIV.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-          </div>
-        </div>
-        <div class="subject-section reveal">
-          <h3 style="border-color:#db2777"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#db2777"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Genetics, Ecology &amp; Control</h3>
-          <div class="topic-grid">
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon bio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="badge badge-free">FREE</span></div><h4>DNA, Genes &amp; Protein Synthesis</h4><p>DNA replication, transcription, translation and gene expression.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a><a class="t-link" href="#">Exam tips</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon bio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Inheritance &amp; Evolution</h4><p>Mendelian genetics, linkage, Hardy-Weinberg and speciation.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon bio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Ecosystems</h4><p>Energy transfer, nutrient cycles, succession and conservation.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon bio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Control &amp; Coordination</h4><p>Nervous system, synapses, hormones, muscle contraction and homeostasis.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-          </div>
-        </div>
-      </div><!-- /alevel biology panel -->
-
-      <!-- A-LEVEL CHEMISTRY -->
-      <div data-subj-panel="chemistry" style="display:none">
-        <div class="subject-section reveal">
-          <h3 id="chemistry-alevel" style="border-color:#059669"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#059669"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>Physical Chemistry</h3>
-          <div class="topic-grid">
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon chem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="10"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Atomic Structure &amp; Bonding</h4><p>Quantum model, orbital theory, bonding types and shapes of molecules.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a><a class="t-link" href="#">Exam tips</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon chem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="10"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Energetics</h4><p>Enthalpy, Hess's law, lattice enthalpies and Born-Haber cycles.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon chem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="10"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Kinetics</h4><p>Rate equations, rate constants, activation energy and the Arrhenius equation.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon chem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="10"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Equilibria</h4><p>Kc, Kp, Le Chatelier's principle and acid-base equilibria.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-          </div>
-        </div>
-        <div class="subject-section reveal">
-          <h3 style="border-color:#059669"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#059669"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>Organic &amp; Inorganic Chemistry</h3>
-          <div class="topic-grid">
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon chem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Organic Chemistry Fundamentals</h4><p>Alkanes, alkenes, alcohols, naming and functional groups.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon chem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Reaction Mechanisms</h4><p>SN1, SN2, electrophilic addition and substitution mechanisms.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a><a class="t-link" href="#">Exam tips</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon chem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Inorganic Chemistry</h4><p>Period 3, transition metals, complex ions and electrode potentials.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon chem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Analytical Chemistry</h4><p>NMR, mass spectrometry, IR spectroscopy and chromatography.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-          </div>
-        </div>
-      </div><!-- /alevel chemistry panel -->
-
-      <!-- A-LEVEL PHYSICS -->
-      <div data-subj-panel="physics" style="display:none">
-        <div class="subject-section reveal">
-          <h3 id="physics-alevel" style="border-color:#ea580c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#ea580c"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Mechanics &amp; Fields</h3>
-          <div class="topic-grid">
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon phys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Kinematics &amp; Projectiles</h4><p>SUVAT, projectile motion and graphs of motion.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a><a class="t-link" href="#">Exam tips</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon phys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Momentum &amp; Collisions</h4><p>Conservation of momentum, impulse, elastic &amp; inelastic.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon phys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Electric &amp; Magnetic Fields</h4><p>Coulomb's law, capacitors, flux density and Faraday's law.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon phys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Circular Motion &amp; Oscillations</h4><p>Centripetal force, SHM, time period and energy.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-          </div>
-        </div>
-        <div class="subject-section reveal">
-          <h3 style="border-color:#ea580c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#ea580c"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Waves, Quantum &amp; Nuclear</h3>
-          <div class="topic-grid">
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon phys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Waves &amp; Superposition</h4><p>Interference, diffraction, standing waves and polarisation.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon phys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Quantum Physics</h4><p>Photoelectric effect, wave-particle duality, electron diffraction.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a><a class="t-link" href="#">Exam tips</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon phys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Nuclear Physics</h4><p>Binding energy, radioactive decay, fission and fusion.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-            <article class="topic-card"><div class="topic-card-top"><div class="t-icon phys"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Thermal Physics</h4><p>Ideal gas laws, internal energy and specific heat capacity.</p><div class="topic-links"><a class="t-link" href="#">Worksheet</a><a class="t-link" href="#">Notes</a></div></article>
-          </div>
-        </div>
-      </div><!-- /alevel physics panel -->
-    </div><!-- /alevel level -->
-
     <!-- Exam technique -->
     <div class="subject-section reveal" id="exam-technique" style="margin-top:2rem">
       <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Exam Technique &amp; Preparation</h3>
@@ -380,7 +239,7 @@
         <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Timing Strategy</h4><p>How to pace yourself across all papers.</p><div class="topic-links"><a class="t-link" href="#">Guide</a></div></article>
         <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Showing Working</h4><p>How to pick up method marks even with wrong answers.</p><div class="topic-links"><a class="t-link" href="#">Guide</a></div></article>
         <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Calculator Use</h4><p>Using your calculator effectively for every topic.</p><div class="topic-links"><a class="t-link" href="#">Guide</a></div></article>
-        <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Revision Checklist</h4><p>Topic-by-topic checklist for GCSE &amp; A-Level.</p><div class="topic-links"><a class="t-link" href="#">Checklist</a></div></article>
+        <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Revision Checklist</h4><p>Topic-by-topic checklist for GCSE.</p><div class="topic-links"><a class="t-link" href="#">Checklist</a></div></article>
       </div>
     </div>
   </div>
@@ -390,15 +249,15 @@
   <div class="wrap" style="text-align:center">
     <div class="eyebrow reveal">Need more support?</div>
     <h2 class="reveal r2" style="font-family:var(--font-serif);font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:900;margin-bottom:1rem">Resources not enough? Let's work through it together.</h2>
-    <p class="text-muted reveal r2" style="max-width:52ch;margin:0 auto 2rem">One-to-one tutoring sessions go much deeper than any worksheet can. Book a free call and we'll build a proper revision plan.</p>
-    <a class="btn btn-teal btn-lg reveal r3" href="contact.html">Book a free introductory call</a>
+    <p class="text-muted reveal r2" style="max-width:52ch;margin:0 auto 2rem">Live weekly group classes go much deeper than any worksheet can. Your first week is completely free — then just £20/week.</p>
+    <a class="btn btn-teal btn-lg reveal r3" href="contact.html">Book your free week</a>
   </div>
 </section>
 
 <div class="newsletter-band"><div class="wrap newsletter-inner"><div class="newsletter-copy reveal"><h2>New resources every week.</h2><p>Get notified when new worksheets and revision guides are added — plus exam tips straight to your inbox.</p></div><div class="reveal r2"><form class="newsletter-form-row" onsubmit="handleNewsletter(event)"><input class="newsletter-input" type="email" placeholder="Enter your email" required autocomplete="email" aria-label="Email"/><button class="btn btn-white" type="submit">Notify me</button></form><p class="newsletter-note">Free. No spam. Unsubscribe any time.</p></div></div></div>
 </main>
 
-<footer class="site-footer"><div class="footer-main"><div class="wrap"><div class="footer-grid"><div class="footer-brand-col"><a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main" style="color:#fff">Peak Grades</span></div></a><p>Expert GCSE and A-Level tutoring and free revision resources for UK students.</p><div class="footer-social"><a class="social-btn" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a><a class="social-btn" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a></div></div><div class="footer-col"><h4>Resources</h4><nav class="footer-links"><a href="resources.html">GCSE Maths</a><a href="resources.html#physics-gcse">GCSE Physics</a><a href="resources.html#alevel">A-Level Maths</a><a href="resources.html#physics-alevel">A-Level Physics</a><a href="resources.html#exam-technique">Exam Technique</a></nav></div><div class="footer-col"><h4>Tutoring</h4><nav class="footer-links"><a href="tutoring.html#gcse">GCSE Subjects</a><a href="tutoring.html#alevel">A-Level Subjects</a><a href="tutoring.html#pricing">Pricing</a></nav></div><div class="footer-col"><h4>About</h4><nav class="footer-links"><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="courses.html">Courses</a></nav></div><div class="footer-col"><h4>Contact</h4><nav class="footer-links"><a href="contact.html">Book a Free Call</a><a href="mailto:hello@peakgrades.co.uk">hello@peakgrades.co.uk</a></nav></div></div></div></div><div class="footer-bottom"><div class="wrap footer-bottom-inner"><span>&copy; 2026 Peak Grades. All rights reserved.</span><div class="footer-bottom-links"><a href="contact.html#privacy">Privacy Policy</a><a href="contact.html#terms">Terms</a></div></div></div></footer>
+<footer class="site-footer"><div class="footer-main"><div class="wrap"><div class="footer-grid"><div class="footer-brand-col"><a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main" style="color:#fff">Peak Grades</span></div></a><p>Expert GCSE tutoring and free revision resources for UK students.</p><div class="footer-social"><a class="social-btn" href="https://www.youtube.com/@PeakGrades-html" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a><a class="social-btn" href="https://www.tiktok.com/@peakgrades.html" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a><a class="social-btn" href="https://www.instagram.com/peakgrades" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a><a class="social-btn" href="https://www.facebook.com/PeakGrades" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div><div class="footer-col"><h4>Resources</h4><nav class="footer-links"><a href="resources.html">GCSE Maths</a><a href="resources.html#physics-gcse">GCSE Physics</a><a href="resources.html#exam-technique">Exam Technique</a></nav></div><div class="footer-col"><h4>Tutoring</h4><nav class="footer-links"><a href="tutoring.html#gcse">GCSE Subjects</a><a href="tutoring.html#pricing">Pricing</a></nav></div><div class="footer-col"><h4>About</h4><nav class="footer-links"><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="courses.html">Courses</a></nav></div><div class="footer-col"><h4>Contact</h4><nav class="footer-links"><a href="contact.html">Book Your Free Week</a><a href="mailto:hello@peakgrades.co.uk">hello@peakgrades.co.uk</a></nav></div></div></div></div><div class="footer-bottom"><div class="wrap footer-bottom-inner"><span>&copy; 2026 Peak Grades. All rights reserved.</span><div class="footer-bottom-links"><a href="contact.html#privacy">Privacy Policy</a><a href="contact.html#terms">Terms</a></div></div></div></footer>
 
 <script src="js/main.js"></script>
 <script>
@@ -414,26 +273,31 @@
     });
   });
 
-  // Hash routing: e.g. #physics-gcse, #maths-alevel
+  // Hash routing: e.g. #physics-gcse
   function activateFromHash() {
     var hash = window.location.hash.replace('#', '');
     if (!hash) return;
-    var last = hash.lastIndexOf('-');
-    if (last === -1) return;
-    var level = hash.slice(last + 1);
-    var subj  = hash.slice(0, last);
-    var levelTab = document.querySelector('[data-level="' + level + '"]');
-    if (!levelTab) return;
-    levelTab.click();
-    setTimeout(function() {
-      var levelPanel = document.querySelector('[data-level-content="' + level + '"]');
-      if (!levelPanel) return;
-      var subjTab = levelPanel.querySelector('[data-subj="' + subj + '"]');
-      if (subjTab) subjTab.click();
-    }, 60);
+    var subj = hash.replace(/-gcse$/, '');
+    var subjTab = document.querySelector('#gcse [data-subj="' + subj + '"]');
+    if (subjTab) subjTab.click();
   }
   window.addEventListener('hashchange', activateFromHash);
   setTimeout(activateFromHash, 120);
+
+  // Lazy-load YouTube embed on click (loads latest upload from the channel's uploads playlist)
+  document.querySelectorAll('[data-yt-playlist]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var card = btn.closest('.yt-embed-card');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/videoseries?list=' + btn.dataset.ytPlaylist + '&autoplay=1';
+      iframe.title = 'Peak Grades — latest YouTube video';
+      iframe.loading = 'lazy';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      card.innerHTML = '';
+      card.appendChild(iframe);
+    });
+  });
 </script>
 </body>
 </html>
