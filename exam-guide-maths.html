@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCSE Maths Exam Technique Guide — Peak Grades</title>
+  <meta name="description" content="GCSE Maths exam technique: timing strategy, showing working, calculator use and a tickable revision checklist." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .g-hero { padding-bottom:2.5rem; }
+    .g-hero h1 { max-width:820px; }
+    .g-switch { display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1.5rem; }
+    .g-switch a { padding:7px 16px;border-radius:6px;font-size:13.5px;font-weight:700;border:2px solid rgba(255,255,255,.28);color:#fff;transition:background .15s,border-color .15s,color .15s; }
+    .g-switch a:hover,.g-switch a:focus-visible { border-color:#fff;background:rgba(255,255,255,.12); }
+    .g-switch a[aria-current="page"] { background:#fff;color:var(--navy);border-color:#fff; }
+    .g-wrap { max-width:820px;margin:0 auto; }
+    .g-jump { display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem; }
+    .g-jump a { display:inline-flex;align-items:center;gap:.5rem;padding:9px 16px;border-radius:999px;border:1.5px solid var(--border);font-size:13.5px;font-weight:700;color:var(--text);background:var(--bg);transition:border-color .15s,color .15s,background .15s; }
+    .g-jump a:hover,.g-jump a:focus-visible { border-color:var(--teal);color:var(--teal);background:var(--teal-light); }
+    .g-jump svg { width:16px;height:16px; }
+    .g-intro { font-size:1.0625rem;line-height:1.75;margin-bottom:1.5rem; }
+    .g-section { background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-xl);padding:1.75rem 1.75rem 1.5rem;margin-bottom:1.5rem;box-shadow:0 1px 2px rgba(13,27,42,.04),0 10px 30px rgba(13,27,42,.06);scroll-margin-top:calc(var(--header-h) + 16px); }
+    .g-section h2 { display:flex;align-items:center;gap:.75rem;font-family:var(--font-serif);font-size:clamp(1.2rem,2.2vw,1.5rem);font-weight:900;letter-spacing:-.02em;line-height:1.25;margin:0 0 1.1rem; }
+    .g-ico { flex:none;width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:var(--teal-light);color:var(--teal-dark); }
+    .g-ico svg { width:21px;height:21px; }
+    .g-section p { font-size:1rem;line-height:1.75;margin:0 0 1rem; }
+    .g-list { margin:0 0 .5rem 1.15rem;padding:0;list-style:disc; }
+    .g-list li { font-size:1rem;line-height:1.7;margin-bottom:.6rem;padding-left:.25rem; }
+    .g-list li::marker { color:var(--teal); }
+    .g-list ol { margin:.5rem 0 .25rem 1.1rem;padding:0;list-style:decimal; }
+    .g-list ol li { margin-bottom:.3rem; }
+    .g-table-wrap { overflow-x:auto;margin:0 0 1.25rem;border:1px solid var(--border);border-radius:var(--radius-lg); }
+    .g-table { width:100%;border-collapse:collapse;font-size:.9375rem; }
+    .g-table th,.g-table td { text-align:left;padding:.8rem 1rem;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.55; }
+    .g-table tbody tr:last-child th,.g-table tbody tr:last-child td { border-bottom:0; }
+    .g-table thead th { background:var(--bg-soft);font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted); }
+    .g-table tbody th { font-weight:700;white-space:nowrap; }
+    .g-progress { display:flex;align-items:center;gap:1rem;margin:0 0 1.25rem;flex-wrap:wrap; }
+    .g-bar { flex:1 1 200px;height:10px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--border);overflow:hidden; }
+    .g-bar span { display:block;height:100%;width:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--teal),#2dd4bf);transition:transform .35s cubic-bezier(.34,1.3,.64,1); }
+    .g-count { font-size:13.5px;font-weight:700;color:var(--text-muted);white-space:nowrap; }
+    .g-reset { font-size:13px;font-weight:700;color:var(--teal);background:none;border:0;cursor:pointer;padding:4px 8px;border-radius:6px;transition:background .15s; }
+    .g-reset:hover { background:var(--teal-light); }
+    .g-reset:focus-visible,.g-checklist input:focus-visible + .g-box { outline:2px solid var(--teal);outline-offset:2px; }
+    .g-checklist { list-style:none;margin:0;padding:0; }
+    .g-checklist li { border-bottom:1px solid var(--border); }
+    .g-checklist li:last-child { border-bottom:0; }
+    .g-checklist label { display:flex;align-items:flex-start;gap:.9rem;padding:.8rem .25rem;cursor:pointer;border-radius:8px;transition:background .15s; }
+    .g-checklist label:hover { background:var(--bg-teal); }
+    .g-checklist input { position:absolute;opacity:0;width:1px;height:1px; }
+    .g-box { flex:none;width:22px;height:22px;margin-top:2px;border:2px solid var(--border-dark);border-radius:6px;background:var(--bg);display:grid;place-items:center;transition:background .15s,border-color .15s; }
+    .g-box::after { content:"";width:11px;height:6px;border-left:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(-45deg) scale(0);margin-top:-2px;transition:transform .2s cubic-bezier(.34,1.56,.64,1); }
+    .g-checklist input:checked + .g-box { background:var(--teal);border-color:var(--teal); }
+    .g-checklist input:checked + .g-box::after { transform:rotate(-45deg) scale(1); }
+    .g-checklist input:checked ~ .g-text { color:var(--text-muted);text-decoration:line-through;text-decoration-color:var(--text-faint); }
+    .g-text { font-size:1rem;line-height:1.6; }
+    .g-cta { margin-top:2rem;padding:1.75rem;background:var(--navy);color:#fff;border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap; }
+    .g-cta p { margin:0;flex:1 1 320px;font-size:1rem;line-height:1.6;color:#fff; }
+    .g-back { display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:2rem;font-size:.9375rem;font-weight:700; }
+    .g-back a { color:var(--teal); }
+    .g-back a:hover { opacity:.8; }
+    @media(max-width:560px){ .g-section{padding:1.25rem 1.1rem;} }
+    @media(prefers-reduced-motion:reduce){ .g-bar span,.g-box::after{transition:none;} }
+  </style>
+</head>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="top-bar"><div class="wrap top-bar-inner"><div class="top-bar-left"><span>🇬🇧 Online tutoring across the UK</span><a href="contact.html">Book your free week</a></div><div class="top-bar-right"><a href="mailto:hello@peakgrades.co.uk">hello@peakgrades.co.uk</a></div></div></div>
+<header class="site-header"><div class="wrap header-inner">
+  <a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main">Peak Grades</span></div></a>
+  <nav class="main-nav" aria-label="Primary">
+    <div class="nav-item"><a class="nav-link" href="tutoring.html">Tutoring <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="tutoring.html#gcse">GCSE Subjects</a><div class="dropdown-divider"></div><a href="tutoring.html#pricing">Pricing</a><a href="contact.html">Book Your Free Week</a></div></div>
+    <div class="nav-item"><a class="nav-link active" href="resources.html">Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a><div class="dropdown"><a href="resources.html#maths-gcse">Maths</a><a href="resources.html#english-gcse">English</a><a href="resources.html#biology-gcse">Biology</a><a href="resources.html#chemistry-gcse">Chemistry</a><a href="resources.html#physics-gcse">Physics</a></div></div>
+    <a class="nav-link" href="courses.html">Courses</a>
+    <a class="nav-link" href="blog.html">Blog</a>
+    <a class="nav-link" href="about.html">About</a>
+  </nav>
+  <div class="header-ctas"><a class="btn btn-outline" href="resources.html">Free Resources</a><a class="btn btn-teal" href="contact.html">Book Free Week</a><button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle><span></span><span></span><span></span></button></div>
+</div></header>
+<nav id="mobile-nav" class="mobile-nav"><a class="mobile-nav-link" href="tutoring.html" data-close-nav>Tutoring</a><a class="mobile-nav-link active" href="resources.html" data-close-nav>Resources</a><a class="mobile-nav-link" href="courses.html" data-close-nav>Courses</a><a class="mobile-nav-link" href="blog.html" data-close-nav>Blog</a><a class="mobile-nav-link" href="about.html" data-close-nav>About</a><div class="mobile-nav-divider"></div><div class="mobile-nav-ctas"><a class="btn btn-outline btn-block" href="resources.html" data-close-nav>Free Resources</a><a class="btn btn-teal btn-block" href="contact.html" data-close-nav>Book Your Free Week</a></div></nav>
+
+
+<main id="main">
+<section class="page-hero g-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="resources.html">Resources</a><span>/</span><a href="resources.html#exam-technique-maths">Exam technique</a><span>/</span><span>Maths</span></div>
+    <div class="page-hero-eyebrow">⏱️ Exam technique &amp; preparation</div>
+    <h1>GCSE Maths <em>exam guide.</em></h1>
+    <nav class="g-switch" aria-label="Choose a subject"><a href="exam-guide-maths.html" aria-current="page">Maths</a><a href="exam-guide-english.html">English</a><a href="exam-guide-biology.html">Biology</a><a href="exam-guide-chemistry.html">Chemistry</a><a href="exam-guide-physics.html">Physics</a></nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap g-wrap">
+    <p class="g-intro">GCSE Maths is three papers of 1 hour 30 minutes each, on either Foundation or Higher tier. One paper is non-calculator: Paper 1 on AQA and Edexcel, Paper 2 on OCR.</p>
+    <div class="g-table-wrap"><table class="g-table"><thead><tr><th scope="col">Board</th><th scope="col">Papers</th><th scope="col">Marks per paper</th><th scope="col">Non-calculator</th></tr></thead><tbody><tr><th scope="row">AQA</th><td>3 × 1h30</td><td>80</td><td>Paper 1</td></tr><tr><th scope="row">Edexcel</th><td>3 × 1h30</td><td>80</td><td>Paper 1</td></tr><tr><th scope="row">OCR</th><td>3 × 1h30</td><td>100</td><td>Paper 2</td></tr></tbody></table></div>
+
+    <p class="g-intro" style="font-size:.875rem;color:var(--text-muted);margin-top:-.5rem">Paper formats use AQA as the reference board — always check your own specification.</p>
+    <nav class="g-jump" aria-label="On this page"><a href="#timing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Timing strategy</a><a href="#working"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>Showing working</a><a href="#calc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="12" y1="11" x2="12.01" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="12" y1="15" x2="12.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><line x1="8" y1="19" x2="12" y2="19"/></svg>Calculator use</a><a href="#checklist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Revision checklist</a></nav>
+    <section class="g-section" id="timing" aria-labelledby="timing-h"><h2 id="timing-h"><span class="g-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Timing strategy</h2>
+<ul class="g-list"><li>Budget about 1 minute per mark on AQA and Edexcel (90 minutes for 80 marks), leaving roughly 10 minutes to check. On OCR it's closer to 50 seconds per mark.</li><li>Questions get harder through the paper. Bank the early marks quickly and accurately — they're worth the same as the hard ones at the end.</li><li>Use the two-minute rule. If you've made no progress on a question in two minutes, write down any first step, mark it with a star and move on.</li><li>Do a second pass for starred questions. They often look easier after a break.</li><li>Final 10 minutes: check units, rounding, and that you've answered every part.</li></ul>
+</section>
+    <section class="g-section" id="working" aria-labelledby="working-h"><h2 id="working-h"><span class="g-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>Showing working</h2>
+<ul class="g-list"><li>Method marks are where most marks live. A wrong answer with correct working can still earn most of the marks; a wrong answer with no working earns none.</li><li>Write every step, one line at a time. Examiners can't award marks for working done in your head or on your calculator.</li><li>"Show that" questions: the answer is given, so all the marks are for the steps. Write the final line in full to match the answer.</li><li>Keep full calculator values. Write down the unrounded answer before rounding, so the examiner can see your accuracy.</li><li>Label what you're finding ("Area of triangle = …"), especially in multi-step problems. It helps you and the examiner.</li><li>Don't cross out working unless you've replaced it with something better. Crossed-out work isn't marked.</li></ul>
+</section>
+    <section class="g-section" id="calc" aria-labelledby="calc-h"><h2 id="calc-h"><span class="g-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="12" y1="11" x2="12.01" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="12" y1="15" x2="12.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><line x1="8" y1="19" x2="12" y2="19"/></svg></span>Calculator use</h2>
+<ul class="g-list"><li>Check degrees mode (a small "D" on the display) before every calculator paper.</li><li>Use brackets generously, especially with fractions, negatives and powers. Type (−3)² not −3².</li><li>Use the fraction button and the S⇔D key to switch between fractions and decimals.</li><li>Use the ANS and memory functions to avoid retyping and rounding mid-calculation.</li><li>Learn the key functions: powers and roots, standard form (×10ˣ), sin/cos/tan and their inverses, and the table function for plotting graphs.</li><li>Sense-check every answer. Estimate first so a typing slip stands out.</li><li>Non-calculator paper: practise written methods for long multiplication, division, fractions and percentages until they're automatic.</li></ul>
+</section>
+    <section class="g-section" id="checklist" aria-labelledby="checklist-h"><h2 id="checklist-h"><span class="g-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>Revision checklist</h2>
+<div class="g-progress"><div class="g-bar" role="presentation"><span></span></div><span class="g-count" aria-live="polite"></span><button class="g-reset" type="button">Reset</button></div>
+<ul class="g-checklist" data-ck="maths"><li><label><input type="checkbox" data-i="0"><span class="g-box" aria-hidden="true"></span><span class="g-text"><strong>Number:</strong> fractions, decimals, percentages, indices, surds (Higher), standard form, bounds</span></label></li><li><label><input type="checkbox" data-i="1"><span class="g-box" aria-hidden="true"></span><span class="g-text"><strong>Algebra:</strong> expanding, factorising, solving equations, simultaneous equations, inequalities, sequences</span></label></li><li><label><input type="checkbox" data-i="2"><span class="g-box" aria-hidden="true"></span><span class="g-text"><strong>Algebra (Higher):</strong> quadratic formula, completing the square, functions, algebraic proof, iteration</span></label></li><li><label><input type="checkbox" data-i="3"><span class="g-box" aria-hidden="true"></span><span class="g-text"><strong>Graphs:</strong> straight lines (y = mx + c), quadratics, gradients and areas under graphs (Higher)</span></label></li><li><label><input type="checkbox" data-i="4"><span class="g-box" aria-hidden="true"></span><span class="g-text"><strong>Ratio, proportion and rates:</strong> direct and inverse proportion, compound measures, growth and decay</span></label></li><li><label><input type="checkbox" data-i="5"><span class="g-box" aria-hidden="true"></span><span class="g-text"><strong>Geometry:</strong> angles, area and volume, Pythagoras, trigonometry, transformations, constructions</span></label></li><li><label><input type="checkbox" data-i="6"><span class="g-box" aria-hidden="true"></span><span class="g-text"><strong>Geometry (Higher):</strong> circle theorems, sine and cosine rules, vectors, similar shapes</span></label></li><li><label><input type="checkbox" data-i="7"><span class="g-box" aria-hidden="true"></span><span class="g-text"><strong>Probability:</strong> tree diagrams, Venn diagrams, conditional probability</span></label></li><li><label><input type="checkbox" data-i="8"><span class="g-box" aria-hidden="true"></span><span class="g-text"><strong>Statistics:</strong> averages, charts, scatter graphs, cumulative frequency and histograms (Higher)</span></label></li><li><label><input type="checkbox" data-i="9"><span class="g-box" aria-hidden="true"></span><span class="g-text"><strong>Formula sheet:</strong> check which formulae are provided for your exam year and learn the rest</span></label></li><li><label><input type="checkbox" data-i="10"><span class="g-box" aria-hidden="true"></span><span class="g-text">At least six full, timed past papers, including two non-calculator</span></label></li><li><label><input type="checkbox" data-i="11"><span class="g-box" aria-hidden="true"></span><span class="g-text">Mistakes log reviewed weekly</span></label></li></ul>
+<p style="margin:1rem 0 0;font-size:.8125rem;color:var(--text-muted)">Your ticks are saved on this device only.</p></section>
+    <aside class="g-cta"><p>Want someone to go through your timing, working and weak topics with you? Peak Grades live classes build exam technique into every session — your first week is free.</p><a class="btn btn-teal" href="contact.html">Book your free week →</a></aside>
+    <div class="g-back"><a href="resources.html#exam-technique-maths">← Back to all resources</a><a href="blog.html">Read the blog →</a></div>
+  </div>
+</section>
+
+<div class="newsletter-band"><div class="wrap newsletter-inner"><div class="newsletter-copy reveal"><h2>New resources every week.</h2><p>Get notified when new worksheets and revision guides are added — plus exam tips straight to your inbox.</p></div><div class="reveal r2"><form class="newsletter-form-row" onsubmit="handleNewsletter(event)"><input class="newsletter-input" type="email" placeholder="Enter your email" required autocomplete="email" aria-label="Email"/><button class="btn btn-white" type="submit">Notify me</button></form><p class="newsletter-note">Free. No spam. Unsubscribe any time.</p></div></div></div>
+</main>
+
+<footer class="site-footer"><div class="footer-main"><div class="wrap"><div class="footer-grid"><div class="footer-brand-col"><a class="brand" href="index.html"><div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M4 17 10 8l4 6 6-9"/><path d="M4 20h16"/></svg></div><div class="brand-name"><span class="brand-name-main" style="color:#fff">Peak Grades</span></div></a><p>Expert GCSE tutoring and free revision resources for UK students.</p><div class="footer-social"><a class="social-btn" href="https://www.youtube.com/@PeakGrades-html" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a><a class="social-btn" href="https://www.tiktok.com/@peakgrades.html" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a><a class="social-btn" href="https://www.instagram.com/peakgrades" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a><a class="social-btn" href="https://www.facebook.com/PeakGrades" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div><div class="footer-col"><h4>Resources</h4><nav class="footer-links"><a href="resources.html">GCSE Maths</a><a href="resources.html#physics-gcse">GCSE Physics</a><a href="resources.html#exam-technique">Exam Technique</a></nav></div><div class="footer-col"><h4>Tutoring</h4><nav class="footer-links"><a href="tutoring.html#gcse">GCSE Subjects</a><a href="tutoring.html#pricing">Pricing</a></nav></div><div class="footer-col"><h4>About</h4><nav class="footer-links"><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="courses.html">Courses</a></nav></div><div class="footer-col"><h4>Contact</h4><nav class="footer-links"><a href="contact.html">Book Your Free Week</a><a href="mailto:hello@peakgrades.co.uk">hello@peakgrades.co.uk</a></nav></div></div></div></div><div class="footer-bottom"><div class="wrap footer-bottom-inner"><span>&copy; 2026 Peak Grades. All rights reserved.</span><div class="footer-bottom-links"><a href="contact.html#privacy">Privacy Policy</a><a href="contact.html#terms">Terms</a></div></div></div></footer>
+<script src="js/main.js"></script>
+<script>
+(function(){
+  var list = document.querySelector('.g-checklist'); if(!list) return;
+  var key = 'pg-exam-checklist-' + list.dataset.ck, boxes = [].slice.call(list.querySelectorAll('input'));
+  var bar = document.querySelector('.g-bar span'), count = document.querySelector('.g-count');
+  var saved = []; try { saved = JSON.parse(localStorage.getItem(key) || '[]'); } catch(e) {}
+  boxes.forEach(function(b){ b.checked = saved.indexOf(+b.dataset.i) > -1; });
+  function update(){
+    var done = boxes.filter(function(b){ return b.checked; });
+    bar.style.transform = 'scaleX(' + (done.length / boxes.length) + ')';
+    count.textContent = done.length + ' of ' + boxes.length + ' done';
+    try { localStorage.setItem(key, JSON.stringify(done.map(function(b){ return +b.dataset.i; }))); } catch(e) {}
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', update); });
+  document.querySelector('.g-reset').addEventListener('click', function(){ boxes.forEach(function(b){ b.checked = false; }); update(); });
+  update();
+})();
+</script>
+</body>
+</html>

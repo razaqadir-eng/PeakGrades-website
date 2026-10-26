@@ -40,6 +40,10 @@
     .topic-links { display:flex;gap:.4rem;margin-top:.85rem;flex-wrap:wrap; }
     .t-link { font-size:11.5px;font-weight:600;color:var(--teal);padding:4px 9px;border-radius:4px;background:var(--teal-light);transition:background .15s; }
     .t-link:hover { background:var(--teal-mid); }
+    .exam-tab { padding:7px 18px;border-radius:6px;font-size:13.5px;font-weight:700;border:2px solid var(--border);color:var(--text-muted);cursor:pointer;transition:border-color .15s,color .15s,background .15s;background:var(--bg);white-space:nowrap; }
+    .exam-tab:hover { border-color:var(--teal-mid);color:var(--teal); }
+    .exam-tab.active { border-color:var(--teal);color:var(--teal);background:var(--teal-light); }
+    .exam-tab:focus-visible { outline:2px solid var(--teal);outline-offset:2px; }
     .level-tabs { display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap; }
     .level-tab { padding:9px 22px;border-radius:6px;font-size:14px;font-weight:700;border:2px solid var(--border);color:var(--text-muted);cursor:pointer;transition:.15s;background:var(--bg); }
     .level-tab.active,.level-tab:hover { border-color:var(--teal);color:var(--teal);background:var(--teal-light); }
@@ -235,11 +239,57 @@
     <!-- Exam technique -->
     <div class="subject-section reveal" id="exam-technique" style="margin-top:2rem">
       <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Exam Technique &amp; Preparation</h3>
-      <div class="topic-grid">
-        <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Timing Strategy</h4><p>How to pace yourself across all papers.</p><div class="topic-links"><a class="t-link" href="#">Guide</a></div></article>
-        <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Showing Working</h4><p>How to pick up method marks even with wrong answers.</p><div class="topic-links"><a class="t-link" href="#">Guide</a></div></article>
-        <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Calculator Use</h4><p>Using your calculator effectively for every topic.</p><div class="topic-links"><a class="t-link" href="#">Guide</a></div></article>
-        <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Revision Checklist</h4><p>Topic-by-topic checklist for GCSE.</p><div class="topic-links"><a class="t-link" href="#">Checklist</a></div></article>
+      <div class="subj-tabs" role="group" aria-label="Exam technique subject">
+        <button class="exam-tab active" type="button" data-exam="maths">Maths</button>
+        <button class="exam-tab" type="button" data-exam="english">English</button>
+        <button class="exam-tab" type="button" data-exam="biology">Biology</button>
+        <button class="exam-tab" type="button" data-exam="chemistry">Chemistry</button>
+        <button class="exam-tab" type="button" data-exam="physics">Physics</button>
+      </div>
+      <div data-exam-panel="maths">
+        <div class="topic-grid">
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Timing Strategy</h4><p>About 1 minute per mark, plus the two-minute rule for stuck questions.</p><div class="topic-links"><a class="t-link" href="exam-guide-maths.html#timing">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Showing Working</h4><p>Where method marks live and how to lay out every step.</p><div class="topic-links"><a class="t-link" href="exam-guide-maths.html#working">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="12" y1="11" x2="12.01" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="12" y1="15" x2="12.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><line x1="8" y1="19" x2="12" y2="19"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Calculator Use</h4><p>Degrees mode, brackets, fraction keys and non-calculator practice.</p><div class="topic-links"><a class="t-link" href="exam-guide-maths.html#calc">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Revision Checklist</h4><p>Tickable checklist covering every Maths topic area.</p><div class="topic-links"><a class="t-link" href="exam-guide-maths.html#checklist">Checklist</a></div></article>
+        </div>
+        <p style="margin-top:1rem;font-size:.875rem"><a class="t-link" href="exam-guide-maths.html">Open the full Maths exam guide →</a></p>
+      </div>
+      <div data-exam-panel="english" style="display:none">
+        <div class="topic-grid">
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Timing Strategy</h4><p>Time follows marks — suggested splits for every AQA paper.</p><div class="topic-links"><a class="t-link" href="exam-guide-english.html#timing">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Showing Working</h4><p>Evidence, quotation and planning: your "working" in English.</p><div class="topic-links"><a class="t-link" href="exam-guide-english.html#working">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="12" y1="11" x2="12.01" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="12" y1="15" x2="12.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><line x1="8" y1="19" x2="12" y2="19"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Calculator Use</h4><p>No calculator in English — what to do with that time instead.</p><div class="topic-links"><a class="t-link" href="exam-guide-english.html#calc">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Revision Checklist</h4><p>Tickable checklist for Language and Literature.</p><div class="topic-links"><a class="t-link" href="exam-guide-english.html#checklist">Checklist</a></div></article>
+        </div>
+        <p style="margin-top:1rem;font-size:.875rem"><a class="t-link" href="exam-guide-english.html">Open the full English exam guide →</a></p>
+      </div>
+      <div data-exam-panel="biology" style="display:none">
+        <div class="topic-grid">
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Timing Strategy</h4><p>About 1 minute per mark, with time set aside for 6-mark questions.</p><div class="topic-links"><a class="t-link" href="exam-guide-biology.html#timing">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Showing Working</h4><p>Calculation layout, 6-mark answers and scientific vocabulary.</p><div class="topic-links"><a class="t-link" href="exam-guide-biology.html#working">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="12" y1="11" x2="12.01" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="12" y1="15" x2="12.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><line x1="8" y1="19" x2="12" y2="19"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Calculator Use</h4><p>Magnification, percentage change, means, rates and gradients.</p><div class="topic-links"><a class="t-link" href="exam-guide-biology.html#calc">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Revision Checklist</h4><p>Tickable checklist covering every Biology topic.</p><div class="topic-links"><a class="t-link" href="exam-guide-biology.html#checklist">Checklist</a></div></article>
+        </div>
+        <p style="margin-top:1rem;font-size:.875rem"><a class="t-link" href="exam-guide-biology.html">Open the full Biology exam guide →</a></p>
+      </div>
+      <div data-exam-panel="chemistry" style="display:none">
+        <div class="topic-grid">
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Timing Strategy</h4><p>About 1 minute per mark, with extra time for moles questions.</p><div class="topic-links"><a class="t-link" href="exam-guide-chemistry.html#timing">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Showing Working</h4><p>Equation-first layout, Mr working and error carried forward.</p><div class="topic-links"><a class="t-link" href="exam-guide-chemistry.html#working">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="12" y1="11" x2="12.01" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="12" y1="15" x2="12.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><line x1="8" y1="19" x2="12" y2="19"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Calculator Use</h4><p>Mr, moles, concentration, yield and standard form.</p><div class="topic-links"><a class="t-link" href="exam-guide-chemistry.html#calc">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Revision Checklist</h4><p>Tickable checklist covering every Chemistry topic.</p><div class="topic-links"><a class="t-link" href="exam-guide-chemistry.html#checklist">Checklist</a></div></article>
+        </div>
+        <p style="margin-top:1rem;font-size:.875rem"><a class="t-link" href="exam-guide-chemistry.html">Open the full Chemistry exam guide →</a></p>
+      </div>
+      <div data-exam-panel="physics" style="display:none">
+        <div class="topic-grid">
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Timing Strategy</h4><p>About 1 minute per mark, with time to recheck units.</p><div class="topic-links"><a class="t-link" href="exam-guide-physics.html#timing">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Showing Working</h4><p>The four-line method for every calculation.</p><div class="topic-links"><a class="t-link" href="exam-guide-physics.html#working">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8.01" y2="11"/><line x1="12" y1="11" x2="12.01" y2="11"/><line x1="16" y1="11" x2="16.01" y2="11"/><line x1="8" y1="15" x2="8.01" y2="15"/><line x1="12" y1="15" x2="12.01" y2="15"/><line x1="16" y1="15" x2="16.01" y2="15"/><line x1="8" y1="19" x2="12" y2="19"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Calculator Use</h4><p>Standard form, prefixes, brackets and graph skills.</p><div class="topic-links"><a class="t-link" href="exam-guide-physics.html#calc">Guide</a></div></article>
+          <article class="topic-card"><div class="topic-card-top"><div class="t-icon exam"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><span class="badge badge-free">FREE</span></div><h4>Revision Checklist</h4><p>Tickable checklist covering every Physics topic.</p><div class="topic-links"><a class="t-link" href="exam-guide-physics.html#checklist">Checklist</a></div></article>
+        </div>
+        <p style="margin-top:1rem;font-size:.875rem"><a class="t-link" href="exam-guide-physics.html">Open the full Physics exam guide →</a></p>
       </div>
     </div>
   </div>
@@ -272,6 +322,25 @@
       if (target) target.style.display = '';
     });
   });
+
+  // Exam technique subject tabs
+  (function(){
+    var tabs = document.querySelectorAll('.exam-tab');
+    function show(slug){
+      tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.exam === slug); });
+      document.querySelectorAll('[data-exam-panel]').forEach(function(p){ p.style.display = p.dataset.examPanel === slug ? '' : 'none'; });
+    }
+    tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t.dataset.exam); }); });
+    function fromHash(){
+      var m = window.location.hash.match(/^#exam-technique-(\w+)$/);
+      if (m && document.querySelector('[data-exam-panel="' + m[1] + '"]')) {
+        show(m[1]);
+        var el = document.getElementById('exam-technique'); if (el) el.scrollIntoView();
+      }
+    }
+    window.addEventListener('hashchange', fromHash);
+    setTimeout(fromHash, 150);
+  })();
 
   // Hash routing: e.g. #physics-gcse
   function activateFromHash() {
