@@ -38,6 +38,13 @@
     .featured-post-body p { font-size:.9375rem;color:var(--text-muted);margin-bottom:1.25rem; }
     @media(max-width:860px){ .blog-grid{grid-template-columns:1fr 1fr;} .featured-post{grid-template-columns:1fr;} .featured-post-body{padding:1.5rem;} }
     @media(max-width:560px){ .blog-grid{grid-template-columns:1fr;} }
+      .blog-card-img { display:block;overflow:hidden; }
+    .blog-card-img img { display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.34,1.3,.64,1); }
+    .blog-card:hover .blog-card-img img { transform:scale(1.05); }
+    .featured-post { grid-template-columns:1.25fr .75fr;box-shadow:0 2px 6px rgba(13,27,42,.06),0 20px 48px rgba(13,27,42,.12); }
+    .featured-post-img { aspect-ratio:auto;align-self:stretch;min-height:340px;overflow:hidden;display:block; }
+    .featured-post-img img { display:block;width:100%;height:100%;object-fit:cover; }
+    @media(max-width:860px){ .featured-post-img{min-height:0;aspect-ratio:16/9;} }
   </style>
 </head>
 <body>
@@ -71,7 +78,7 @@
 
     <!-- Featured post -->
     <article class="featured-post reveal">
-      <div class="featured-post-img">📅</div>
+      <div class="featured-post-img"><img src="img/blog/gcse-revision-timeline.svg" alt="The GCSE revision timeline — what to do in Year 10, Year 11 and the final term" width="800" height="450" /></div>
       <div class="featured-post-body">
         <div class="blog-meta"><span class="blog-cat" style="background:#ccfbf1;color:#0f766e">Students &amp; Parents</span><span class="blog-date">19 Oct 2026</span><span class="badge badge-new">Featured</span></div>
         <h2><a href="blog-gcse-revision-timeline.html">The GCSE revision timeline — what to do in Year 10, Year 11 and the final term</a></h2>
@@ -93,7 +100,7 @@
     <div class="blog-grid" id="blog-grid">
 
       <article class="blog-card reveal" data-category="students exam-technique revision">
-        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#eff6ff;">📄</div></div>
+        <a class="blog-card-img" href="blog-how-to-use-gcse-past-papers.html" tabindex="-1" aria-hidden="true"><img src="img/blog/how-to-use-gcse-past-papers.svg" alt="" width="800" height="450" loading="lazy" /></a>
         <div class="blog-card-body">
           <div class="blog-meta"><span class="blog-cat" style="background:#dbeafe;color:#1d4ed8">Students</span><span class="blog-date">6 Oct 2026</span></div>
           <h3><a href="blog-how-to-use-gcse-past-papers.html">How to use GCSE past papers properly (most students waste them)</a></h3>
@@ -103,7 +110,7 @@
       </article>
 
       <article class="blog-card reveal r2" data-category="parents">
-        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#f0fdf4;">👨‍👩‍👧</div></div>
+        <a class="blog-card-img" href="blog-supporting-your-child-through-gcses.html" tabindex="-1" aria-hidden="true"><img src="img/blog/supporting-your-child-through-gcses.svg" alt="" width="800" height="450" loading="lazy" /></a>
         <div class="blog-card-body">
           <div class="blog-meta"><span class="blog-cat" style="background:#dcfce7;color:#15803d">Parents</span><span class="blog-date">22 Sep 2026</span></div>
           <h3><a href="blog-supporting-your-child-through-gcses.html">How to support your child through GCSEs without nagging</a></h3>
@@ -113,7 +120,7 @@
       </article>
 
       <article class="blog-card reveal r3" data-category="students parents exam-technique">
-        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#eff6ff;">📊</div></div>
+        <a class="blog-card-img" href="blog-gcse-mock-results-what-next.html" tabindex="-1" aria-hidden="true"><img src="img/blog/gcse-mock-results-what-next.svg" alt="" width="800" height="450" loading="lazy" /></a>
         <div class="blog-card-body">
           <div class="blog-meta"><span class="blog-cat" style="background:#ccfbf1;color:#0f766e">Students &amp; Parents</span><span class="blog-date">8 Sep 2026</span></div>
           <h3><a href="blog-gcse-mock-results-what-next.html">Mock exam results — what they really tell you (and what to do next)</a></h3>
@@ -123,7 +130,7 @@
       </article>
 
       <article class="blog-card reveal" data-category="parents">
-        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#f0fdf4;">🎯</div></div>
+        <a class="blog-card-img" href="blog-gcse-foundation-vs-higher-tier.html" tabindex="-1" aria-hidden="true"><img src="img/blog/gcse-foundation-vs-higher-tier.svg" alt="" width="800" height="450" loading="lazy" /></a>
         <div class="blog-card-body">
           <div class="blog-meta"><span class="blog-cat" style="background:#dcfce7;color:#15803d">Parents</span><span class="blog-date">27 Aug 2026</span></div>
           <h3><a href="blog-gcse-foundation-vs-higher-tier.html">Foundation or Higher tier? A parent's guide to the GCSE tier decision</a></h3>
@@ -133,7 +140,7 @@
       </article>
 
       <article class="blog-card reveal r2" data-category="students revision">
-        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#fef2f2;">🧠</div></div>
+        <a class="blog-card-img" href="blog-gcse-revision-techniques-that-work.html" tabindex="-1" aria-hidden="true"><img src="img/blog/gcse-revision-techniques-that-work.svg" alt="" width="800" height="450" loading="lazy" /></a>
         <div class="blog-card-body">
           <div class="blog-meta"><span class="blog-cat" style="background:#dbeafe;color:#1d4ed8">Students</span><span class="blog-date">11 Aug 2026</span></div>
           <h3><a href="blog-gcse-revision-techniques-that-work.html">Stop re-reading your notes — revision techniques that actually work</a></h3>
@@ -143,7 +150,7 @@
       </article>
 
       <article class="blog-card reveal r3" data-category="students parents">
-        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#ecfdf5;">💬</div></div>
+        <a class="blog-card-img" href="blog-managing-gcse-exam-stress.html" tabindex="-1" aria-hidden="true"><img src="img/blog/managing-gcse-exam-stress.svg" alt="" width="800" height="450" loading="lazy" /></a>
         <div class="blog-card-body">
           <div class="blog-meta"><span class="blog-cat" style="background:#ccfbf1;color:#0f766e">Students &amp; Parents</span><span class="blog-date">16 Jul 2026</span></div>
           <h3><a href="blog-managing-gcse-exam-stress.html">Exam nerves — how to manage GCSE stress (for students and parents)</a></h3>
@@ -153,7 +160,7 @@
       </article>
 
       <article class="blog-card reveal" data-category="students exam-technique">
-        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#fff7ed;">✏️</div></div>
+        <a class="blog-card-img" href="blog-gcse-maths-common-mistakes.html" tabindex="-1" aria-hidden="true"><img src="img/blog/gcse-maths-common-mistakes.svg" alt="" width="800" height="450" loading="lazy" /></a>
         <div class="blog-card-body">
           <div class="blog-meta"><span class="blog-cat" style="background:#fff7ed;color:#ea580c">Exam Technique</span><span class="blog-date">24 Jun 2026</span></div>
           <h3><a href="blog-gcse-maths-common-mistakes.html">8 GCSE Maths mistakes that cost students easy marks</a></h3>
@@ -163,7 +170,7 @@
       </article>
 
       <article class="blog-card reveal r2" data-category="students parents exam-technique">
-        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#eff6ff;">✅</div></div>
+        <a class="blog-card-img" href="blog-gcse-exam-day-checklist.html" tabindex="-1" aria-hidden="true"><img src="img/blog/gcse-exam-day-checklist.svg" alt="" width="800" height="450" loading="lazy" /></a>
         <div class="blog-card-body">
           <div class="blog-meta"><span class="blog-cat" style="background:#ccfbf1;color:#0f766e">Students &amp; Parents</span><span class="blog-date">28 May 2026</span></div>
           <h3><a href="blog-gcse-exam-day-checklist.html">The night before and the morning of a GCSE exam — a checklist</a></h3>
@@ -173,7 +180,7 @@
       </article>
 
       <article class="blog-card reveal r3" data-category="parents students">
-        <div class="blog-card-img"><div class="blog-card-img-inner" style="background:#fdf4ff;">🎓</div></div>
+        <a class="blog-card-img" href="blog-gcse-results-day-options.html" tabindex="-1" aria-hidden="true"><img src="img/blog/gcse-results-day-options.svg" alt="" width="800" height="450" loading="lazy" /></a>
         <div class="blog-card-body">
           <div class="blog-meta"><span class="blog-cat" style="background:#ccfbf1;color:#0f766e">Parents &amp; Students</span><span class="blog-date">9 May 2026</span></div>
           <h3><a href="blog-gcse-results-day-options.html">GCSE results day — what to do if things don't go to plan</a></h3>
