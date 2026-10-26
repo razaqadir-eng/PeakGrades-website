@@ -97,4 +97,33 @@
     }, 900);
   };
 
+  /* ── Light / dark theme toggle ───────────────────── */
+  (function () {
+    var root = document.documentElement;
+    var btn = document.querySelector('[data-theme-toggle]');
+    var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    function stored() { try { return localStorage.getItem('pg-theme'); } catch (e) { return null; } }
+    function current() { return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'; }
+    function sync() {
+      if (!btn) return;
+      var dark = current() === 'dark';
+      btn.setAttribute('aria-pressed', String(dark));
+      btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      btn.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+    function apply(t) { root.setAttribute('data-theme', t); sync(); }
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        apply(next);
+        try { localStorage.setItem('pg-theme', next); } catch (e) {}
+      });
+    }
+    /* Follow the system setting until the visitor makes their own choice */
+    if (mq && mq.addEventListener) {
+      mq.addEventListener('change', function (e) { if (!stored()) apply(e.matches ? 'dark' : 'light'); });
+    }
+    sync();
+  })();
+
 })();

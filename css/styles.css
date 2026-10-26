@@ -532,3 +532,63 @@ details[open] .faq-chevron { transform: rotate(180deg); background: var(--teal-l
 
 @media(max-width:860px){ .subj-course-grid{grid-template-columns:1fr 1fr;} }
 @media(max-width:560px){ .subj-course-grid{grid-template-columns:1fr;} }
+
+/* ── Theme toggle ─────────────────────────────────────────── */
+.theme-toggle {
+  position: relative; flex-shrink: 0;
+  width: 40px; height: 40px; border-radius: 10px;
+  display: grid; place-items: center;
+  border: 1.5px solid var(--border-dark); background: var(--bg); color: var(--text-muted);
+  transition: border-color .15s, color .15s, background .15s, transform .2s cubic-bezier(.34,1.56,.64,1);
+}
+.theme-toggle:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-light); }
+.theme-toggle:active { transform: scale(.92); }
+.theme-toggle svg { width: 19px; height: 19px; grid-area: 1 / 1; transition: transform .35s cubic-bezier(.34,1.56,.64,1), opacity .2s; }
+.theme-toggle .i-sun  { opacity: 0; transform: rotate(-70deg) scale(.5); }
+.theme-toggle .i-moon { opacity: 1; transform: none; }
+html[data-theme="dark"] .theme-toggle .i-sun  { opacity: 1; transform: none; }
+html[data-theme="dark"] .theme-toggle .i-moon { opacity: 0; transform: rotate(70deg) scale(.5); }
+@media (prefers-reduced-motion: reduce) { .theme-toggle, .theme-toggle svg { transition: none; } }
+
+/* ── Dark theme ───────────────────────────────────────────── */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --teal:        #2fb8a8;
+  --teal-dark:   #7fe0d3;
+  --teal-light:  rgba(47,184,168,.16);
+  --teal-mid:    rgba(47,184,168,.38);
+  --text:        #e6edf3;
+  --text-muted:  #a6b3be;
+  --text-faint:  #7a8995;
+  --bg:          #0f1b26;
+  --bg-soft:     #14232f;
+  --bg-teal:     #102824;
+  --border:      #243645;
+  --border-dark: #34495a;
+  --shadow-sm:   0 1px 3px rgba(0,0,0,.45), 0 1px 2px rgba(0,0,0,.35);
+  --shadow:      0 4px 16px rgba(0,0,0,.4);
+  --shadow-lg:   0 12px 40px rgba(0,0,0,.5);
+  --shadow-xl:   0 24px 64px rgba(0,0,0,.55);
+}
+/* Solid brand surfaces keep the original teal so white text stays readable */
+html[data-theme="dark"] .btn-teal,
+html[data-theme="dark"] .brand-icon { background: #00897b; border-color: #00897b; }
+html[data-theme="dark"] .stats-bar,
+html[data-theme="dark"] .tutor-panel-head,
+html[data-theme="dark"] .tutor-avatar,
+html[data-theme="dark"] .tutor-avatar-lg,
+html[data-theme="dark"] .step-num,
+html[data-theme="dark"] .process-num,
+html[data-theme="dark"] .featured-badge { background-color: #00897b; }
+html[data-theme="dark"] .btn-teal:hover { background: #00796b; border-color: #00796b; }
+html[data-theme="dark"] .btn-white { color: #00695c; }
+html[data-theme="dark"] .social-btn:hover { background: #00897b; }
+html[data-theme="dark"] .site-header { box-shadow: 0 2px 8px rgba(0,0,0,.4); border-bottom-color: #00897b; }
+html[data-theme="dark"] .top-bar { background: #0a141d; }
+html[data-theme="dark"] ::placeholder { color: var(--text-faint); }
+/* Pale pastel chips and tinted icon tiles: keep legible and quieter on a dark page */
+html[data-theme="dark"] .badge,
+html[data-theme="dark"] .blog-cat,
+html[data-theme="dark"] .t-icon,
+html[data-theme="dark"] .card-icon { filter: brightness(.88) saturate(.95); }
+html[data-theme="dark"] .t-diagram { filter: brightness(.9); }
