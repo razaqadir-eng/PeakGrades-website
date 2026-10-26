@@ -335,7 +335,9 @@ ul, ol { list-style: none; }
 }
 .newsletter-input::placeholder { color: rgba(255,255,255,.4); }
 .newsletter-input:focus { outline: none; border-color: #4dd0c4; }
-.newsletter-note { margin-top: .65rem; font-size: 12px; color: rgba(255,255,255,.4); }
+.newsletter-note { margin-top: .65rem; font-size: 12.5px; line-height: 1.55; color: rgba(255,255,255,.72); max-width: 46ch; }
+.newsletter-note a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+.newsletter-note a:hover { color: #4dd0c4; }
 
 /* ── Site footer ──────────────────────────────────────────── */
 .site-footer { background: var(--navy); }

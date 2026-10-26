@@ -161,6 +161,10 @@
     /* ── FAQ on contact page ─────────────────────────── */
     .faq-section { max-width: 720px; margin: 0 auto; }
     /* ── Privacy sections ────────────────────────────── */
+    .cf-hint { display: block; margin-top: .35rem; font-size: 12.5px; color: var(--text-muted); }
+    .form-notice { font-size: .875rem; color: var(--text-muted); margin: 0 0 1rem; line-height: 1.6; }
+    .form-notice a { color: var(--teal); text-decoration: underline; }
+    [hidden] { display: none !important; }
     .policy-section { background: var(--bg-soft); border-radius: var(--radius-lg); padding: 2.5rem; }
     .policy-section h2 {
       font-family: var(--font-serif);
@@ -233,6 +237,27 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <label for="cf-role">I am a… *</label>
+          <select id="cf-role" name="role" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="student">Student</option>
+            <option value="parent">Parent or guardian</option>
+          </select>
+        </div>
+
+        <div class="form-row" id="cf-parent-fields" hidden>
+          <div class="form-group">
+            <label for="cf-parent-name">Parent or guardian's name *</label>
+            <input type="text" id="cf-parent-name" name="parent_name" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="cf-parent-email">Parent or guardian's email *</label>
+            <input type="email" id="cf-parent-email" name="parent_email" autocomplete="off" aria-describedby="cf-parent-hint" />
+            <small id="cf-parent-hint" class="cf-hint">We'll copy them in when we confirm your free week.</small>
+          </div>
+        </div>
+
         <div class="form-row">
           <div class="form-group">
             <label for="cf-level">Qualification level *</label>
@@ -272,9 +297,11 @@
           <textarea id="cf-message" name="message" placeholder="E.g. I'm currently predicted a Grade 6 and want to reach a Grade 8. My weakest topics are algebra and simultaneous equations…" required></textarea>
         </div>
 
+        <p class="form-notice">We'll use these details to reply to your enquiry and arrange your free week. See our <a href="privacy.html">Privacy Policy</a> for how we look after your information.</p>
+
         <div class="form-consent">
-          <input type="checkbox" id="cf-consent" name="consent" required />
-          <label for="cf-consent">I agree to Peak Grades storing my details to respond to this enquiry. See our <a href="#privacy" style="color:var(--teal);text-decoration:underline">Privacy Policy</a>.</label>
+          <input type="checkbox" id="cf-newsletter" name="newsletter" value="yes" />
+          <label for="cf-newsletter">Send me free revision resources and exam tips by email. You can unsubscribe at any time.</label>
         </div>
 
         <button type="submit" class="btn btn-teal btn-lg btn-block">Send Message &amp; Book Free Week</button>
@@ -408,7 +435,7 @@
         <li class="faq-item">
           <details>
             <summary>How do online lessons work?</summary>
-            <p>Lessons take place over Zoom using a shared digital whiteboard (Bitpaper or Google Jamboard) so you can write and draw exactly as you would on paper. You'll need a device with a camera, a stable internet connection, and ideally a stylus or graphics tablet — though a mouse works fine too.</p>
+            <p>Lessons take place over Zoom using a shared digital whiteboard (Bitpaper) so you can write and draw exactly as you would on paper. You'll need a device with a camera, a stable internet connection, and ideally a stylus or graphics tablet — though a mouse works fine too.</p>
           </details>
         </li>
       </ul>
@@ -416,58 +443,20 @@
   </div>
 </section>
 
-<!-- ── PRIVACY / TERMS / COOKIES ──────────────────────────────── -->
-<section class="section" id="privacy">
-  <div class="wrap">
-    <div class="section-header reveal">
-      <div class="eyebrow">Legal</div>
-      <h2>Privacy, Terms &amp; Cookies</h2>
-      <p>We keep things simple and transparent. Here's how we handle your data.</p>
-    </div>
-    <div class="policy-grid reveal">
-      <div class="policy-section">
-        <h2>Privacy Policy</h2>
-        <p>Peak Grades takes your privacy seriously. We only collect the information you provide directly (name, email, enquiry details) and use it solely to respond to your enquiry and deliver the service you've requested.</p>
-        <p>We do not sell, trade, or transfer your personal data to third parties. We do not use your data for automated profiling or marketing without your explicit consent.</p>
-        <ul>
-          <li>Data is stored securely and deleted within 12 months of last contact if no tutoring relationship continues.</li>
-          <li>You can request to see, correct, or delete your data at any time by emailing hello@peakgrades.co.uk.</li>
-          <li>This website is hosted in the UK/EU and complies with UK GDPR.</li>
-        </ul>
-        <p>Last updated: May 2026.</p>
-      </div>
-      <div>
-        <div class="policy-section" style="margin-bottom:1.5rem" id="terms">
-          <h2>Terms of Service</h2>
-          <p>By booking tutoring sessions with Peak Grades you agree to the following:</p>
-          <ul>
-            <li>Sessions cancelled with less than 24 hours' notice may be charged at 50% of the session rate.</li>
-            <li>Payment is due before or at the time of each session unless a package has been pre-purchased.</li>
-            <li>Peak Grades reserves the right to end a tutoring relationship if sessions are repeatedly missed without notice.</li>
-          </ul>
-          <p>Full terms are provided on booking confirmation.</p>
-        </div>
-        <div class="policy-section" id="cookies">
-          <h2>Cookie Policy</h2>
-          <p>This website uses only essential cookies — no tracking, advertising, or analytics cookies are set without your consent. We do not use Google Analytics or third-party ad networks.</p>
-          <p>Essential cookies include those required for the site to function (e.g., form session state). You can disable cookies in your browser settings, though this may affect some functionality.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ── NEWSLETTER ─────────────────────────────────────────────── -->
 <section class="newsletter-band">
   <div class="wrap newsletter-inner">
-    <div class="newsletter-text">
+    <div class="newsletter-copy">
       <h2>Free resources, revision tips &amp; exam updates — straight to your inbox.</h2>
-      <p>Join 1,000+ students and parents already subscribed. Unsubscribe anytime.</p>
+      <p>Get free worksheets, exam technique guides and revision tips by email, about once a week.</p>
     </div>
-    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-      <input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address" required />
-      <button type="submit" class="btn btn-white">Subscribe Free</button>
-    </form>
+    <div>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" class="newsletter-input" placeholder="Your email address" aria-label="Email address" required autocomplete="email" />
+        <button type="submit" class="btn btn-white">Subscribe Free</button>
+      </form>
+      <p class="newsletter-note">We'll only use your email to send you this newsletter. Unsubscribe any time. <a href="privacy.html">Privacy Policy</a></p>
+    </div>
   </div>
 </section>
 
@@ -497,9 +486,9 @@
       </div>
       <div class="footer-col">
         <h4>Legal</h4>
-        <ul><li><a href="contact.html#privacy">Privacy Policy</a></li><li><a href="contact.html#terms">Terms of Service</a></li><li><a href="contact.html#cookies">Cookie Policy</a></li></ul>
+        <ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="privacy.html#cookies">Cookie Policy</a></li></ul>
         <h4 style="margin-top:1.5rem">Follow</h4>
-        <ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">YouTube</a></li></ul>
+        <ul><li><a href="https://www.instagram.com/peakgrades" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.tiktok.com/@peakgrades.html" target="_blank" rel="noopener">TikTok</a></li><li><a href="https://www.youtube.com/@PeakGrades-html" target="_blank" rel="noopener">YouTube</a></li></ul>
       </div>
     </div>
     <div class="footer-bottom">
@@ -511,10 +500,27 @@
 
 <script src="js/main.js"></script>
 <script>
-  /* Contact form submission */
+  /* Contact form: show parent/guardian fields for students, validate, then confirm */
+  (function () {
+    var role = document.getElementById('cf-role');
+    var wrap = document.getElementById('cf-parent-fields');
+    var pName = document.getElementById('cf-parent-name');
+    var pEmail = document.getElementById('cf-parent-email');
+    function syncRole() {
+      var isStudent = role.value === 'student';
+      wrap.hidden = !isStudent;
+      pName.required = isStudent;
+      pEmail.required = isStudent;
+      if (!isStudent) { pName.value = ''; pEmail.value = ''; }
+    }
+    role.addEventListener('change', syncRole);
+    syncRole();
+  })();
+
   function handleContact(e) {
     e.preventDefault();
     const form = document.getElementById('contact-form');
+    if (!form.reportValidity()) return;
     const success = document.getElementById('contact-success');
     form.style.display = 'none';
     success.classList.add('visible');
