@@ -47,13 +47,22 @@
     .level-tabs { display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap; }
     .level-tab { padding:9px 22px;border-radius:6px;font-size:14px;font-weight:700;border:2px solid var(--border);color:var(--text-muted);cursor:pointer;transition:.15s;background:var(--bg); }
     .level-tab.active,.level-tab:hover { border-color:var(--teal);color:var(--teal);background:var(--teal-light); }
-    .yt-embed-card { position:relative;max-width:720px;margin:0 auto;aspect-ratio:16/9;border-radius:var(--radius-lg);overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,#1a3a4a 55%,#0d4d45 100%);box-shadow:var(--shadow-lg); }
+    .yt-embed-card { position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius-lg);overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,#1a3a4a 55%,#0d4d45 100%);box-shadow:var(--shadow-lg); }
     .yt-facade { position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:none;border:0;cursor:pointer;color:#fff; }
     .yt-play-btn { width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.3);display:grid;place-items:center;transition:transform .2s,background .2s; }
     .yt-play-btn svg { width:26px;height:26px;margin-left:4px; }
     .yt-facade:hover .yt-play-btn, .yt-facade:focus-visible .yt-play-btn { background:var(--teal);border-color:var(--teal);transform:scale(1.06); }
     .yt-facade-label { font-size:.9375rem;font-weight:600; }
     .yt-embed-card iframe { width:100%;height:100%;border:0;display:block; }
+    .yt-duo { display:grid;grid-template-columns:256fr 81fr;gap:1.25rem;max-width:1000px;margin:0 auto;align-items:start; }
+    .yt-col { min-width:0; }
+    .yt-cap { margin:0 0 .6rem;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted); }
+    .yt-col-short .yt-embed-card { aspect-ratio:9/16; }
+    .yt-col-short .yt-play-btn { width:56px;height:56px; }
+    .yt-col-short .yt-play-btn svg { width:20px;height:20px; }
+    .yt-col-short .yt-facade { gap:.75rem;padding:0 .5rem;text-align:center; }
+    .yt-col-short .yt-facade-label { font-size:.8125rem; }
+    @media(max-width:700px){ .yt-duo{grid-template-columns:1fr;gap:1.5rem;} .yt-col-short{max-width:300px;width:100%;margin:0 auto;} }
     @media(max-width:860px){ .topic-grid{grid-template-columns:1fr 1fr;} .resource-type-grid{grid-template-columns:1fr 1fr;} }
     @media(max-width:560px){ .topic-grid{grid-template-columns:1fr;} .resource-type-grid{grid-template-columns:1fr;} }
   </style>
@@ -89,11 +98,25 @@
   <div class="wrap">
     <!-- Video lessons -->
     <div class="section-header center reveal"><div class="eyebrow">Video Lessons</div><h2>Watch &amp; learn on YouTube.</h2><p>Free video lessons and quick-fire shorts covering exam technique and common GCSE topics — new videos added regularly.</p></div>
-    <div class="yt-embed-card reveal">
-      <button class="yt-facade" type="button" aria-label="Play the latest video from Peak Grades on YouTube" data-yt-playlist="UU_hq0Ibf0yKhc4D6pyEIttw">
-        <span class="yt-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span>
-        <span class="yt-facade-label">Watch our latest video</span>
-      </button>
+    <div class="yt-duo reveal">
+      <div class="yt-col yt-col-video">
+        <p class="yt-cap">Latest videos</p>
+        <div class="yt-embed-card">
+          <button class="yt-facade" type="button" aria-label="Play the latest video from Peak Grades on YouTube" data-yt-playlist="UULF_hq0Ibf0yKhc4D6pyEIttw">
+            <span class="yt-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span>
+            <span class="yt-facade-label">Watch our latest video</span>
+          </button>
+        </div>
+      </div>
+      <div class="yt-col yt-col-short">
+        <p class="yt-cap">Latest shorts</p>
+        <div class="yt-embed-card">
+          <button class="yt-facade" type="button" aria-label="Play the latest short from Peak Grades on YouTube" data-yt-playlist="UUSH_hq0Ibf0yKhc4D6pyEIttw">
+            <span class="yt-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span>
+            <span class="yt-facade-label">Watch our latest short</span>
+          </button>
+        </div>
+      </div>
     </div>
     <p style="text-align:center;margin-top:1.25rem"><a class="btn btn-outline" href="https://www.youtube.com/@PeakGrades-html" target="_blank" rel="noopener">Subscribe on YouTube →</a></p>
 
