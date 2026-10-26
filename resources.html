@@ -366,6 +366,8 @@
       document.querySelectorAll('[data-exam-panel]').forEach(function(p){ p.style.display = p.dataset.examPanel === slug ? '' : 'none'; });
     }
     tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t.dataset.exam); }); });
+    // Choosing a subject in the main tabs above also switches the exam technique section to match
+    document.querySelectorAll('.subj-tab').forEach(function(t){ t.addEventListener('click', function(){ show(t.dataset.subj); }); });
     function fromHash(){
       var m = window.location.hash.match(/^#exam-technique-(\w+)$/);
       if (m && document.querySelector('[data-exam-panel="' + m[1] + '"]')) {
